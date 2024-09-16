@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>example_fcrbf_1 &mdash; rosenpy 2.1 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/ico_rosenpy.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo_rosenpy.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../example_cvffnn_1.html">example_cvffnn_1 module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../example_cvrbf_1.html">example_cvrbf_1 module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../example_fcrbf_1.html">example_fcrbf_1 module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../example_ptrbf_1.html">example_ptrbf_1 module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../example_ptrbf_2.html">example_ptrbf_2 module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../example_scffnn_1.html">example_scffnn_1 module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">rosenpy</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">rosenpy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Module code</a></li>
+      <li class="breadcrumb-item active">example_fcrbf_1</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for example_fcrbf_1</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">**RosenPy: An Open Source Python Framework for Complex-Valued Neural Networks**.</span>
+<span class="sd">*Copyright © A. A. Cruz, K. S. Mayer, D. S. Arantes*.</span>
+
+<span class="sd">*License*</span>
+
+<span class="sd">This file is part of RosenPy.</span>
+<span class="sd">RosenPy is an open source framework distributed under the terms of the GNU General </span>
+<span class="sd">Public License, as published by the Free Software Foundation, either version 3 of </span>
+<span class="sd">the License, or (at your option) any later version. For additional information on </span>
+<span class="sd">license terms, please open the Readme.md file.</span>
+
+<span class="sd">RosenPy is distributed in the hope that it will be useful to every user, but </span>
+<span class="sd">WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or </span>
+<span class="sd">FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.</span>
+
+<span class="sd">You should have received a copy of the GNU General Public License along with RosenPy. </span>
+<span class="sd">If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">project_root</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span> <span class="s1">&#39;..&#39;</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">project_root</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">:</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">project_root</span><span class="p">)</span>
+    
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">rosenpy.model.fcrbfnn</span> <span class="k">as</span> <span class="nn">mynn</span>
+<span class="kn">import</span> <span class="nn">rosenpy.utils.utils</span> <span class="k">as</span> <span class="nn">utils</span>
+<span class="kn">import</span> <span class="nn">rosenpy.utils.init_func</span> <span class="k">as</span> <span class="nn">init_func</span>
+<span class="kn">import</span> <span class="nn">rosenpy.utils.decay_func</span> <span class="k">as</span> <span class="nn">decay_func</span>
+<span class="kn">import</span> <span class="nn">rosenpy.model.rp_optimizer</span> <span class="k">as</span> <span class="nn">opt</span>
+<span class="kn">import</span> <span class="nn">rosenpy.dataset.beamforming</span> <span class="k">as</span> <span class="nn">dt</span>
+
+
+
+
+<div class="viewcode-block" id="set_data"><a class="viewcode-back" href="../example_fcrbf_1.html#example_fcrbf_1.set_data">[docs]</a><span class="k">def</span> <span class="nf">set_data</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Set up the data for training.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        tuple: Tuple containing the normalized input and output datasets.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="mf">850e6</span>
+    <span class="n">sinr_db</span> <span class="o">=</span> <span class="mi">20</span>
+    <span class="n">snr_dbs</span> <span class="o">=</span> <span class="mi">25</span>
+    <span class="n">snr_dbi</span> <span class="o">=</span> <span class="mi">20</span>
+    <span class="n">phi</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">160</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="mi">260</span><span class="p">,</span> <span class="mi">280</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">330</span><span class="p">]</span>
+    <span class="n">theta</span> <span class="o">=</span> <span class="p">[</span><span class="mi">90</span><span class="p">]</span> <span class="o">*</span> <span class="mi">11</span>
+    <span class="n">desired</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="n">modulation</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;QAM&quot;</span><span class="p">,</span> <span class="s2">&quot;WGN&quot;</span><span class="p">,</span> <span class="s2">&quot;QAM&quot;</span><span class="p">,</span> <span class="s2">&quot;PSK&quot;</span><span class="p">,</span> <span class="s2">&quot;QAM&quot;</span><span class="p">,</span> <span class="s2">&quot;WGN&quot;</span><span class="p">,</span> <span class="s2">&quot;QAM&quot;</span><span class="p">,</span> <span class="s2">&quot;WGN&quot;</span><span class="p">,</span> <span class="s2">&quot;QAM&quot;</span><span class="p">,</span> <span class="s2">&quot;PSK&quot;</span><span class="p">,</span> <span class="s2">&quot;PSK&quot;</span><span class="p">]</span>
+    <span class="n">m_mod</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+
+    <span class="n">len_data</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">1e4</span><span class="p">)</span>
+    <span class="n">desired</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">desired</span><span class="p">)</span>
+    
+    <span class="n">set_in</span><span class="p">,</span> <span class="n">set_out</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">create_dataset_beam</span><span class="p">(</span><span class="n">modulation</span><span class="p">,</span> <span class="n">m_mod</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">desired</span><span class="p">,</span> <span class="n">len_data</span><span class="p">,</span> <span class="n">sinr_db</span><span class="p">,</span> <span class="n">snr_dbs</span><span class="p">,</span> <span class="n">snr_dbi</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">set_in</span><span class="p">,</span> <span class="n">set_out</span></div>
+
+
+<span class="c1">###############################################################################################################</span>
+<span class="c1">###############################################################################################################</span>
+
+
+<span class="c1"># Initialize input_data and output_data using the set_data function</span>
+<span class="n">input_data</span><span class="p">,</span> <span class="n">output_data</span> <span class="o">=</span> <span class="n">set_data</span><span class="p">()</span>
+
+<span class="c1"># Create an instance of the FCRBF Neural Network</span>
+<span class="n">nn</span> <span class="o">=</span> <span class="n">mynn</span><span class="o">.</span><span class="n">FCRBFNN</span><span class="p">(</span><span class="n">gpu_enable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Add layers to the network</span>
+<span class="n">nn</span><span class="o">.</span><span class="n">add_layer</span><span class="p">(</span><span class="n">ishape</span><span class="o">=</span><span class="n">input_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">neurons</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">oshape</span><span class="o">=</span><span class="n">output_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">gamma_rate</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">,</span> <span class="n">sigma_rate</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">)</span>
+
+<span class="c1"># Train the neural network using the fit method</span>
+<span class="n">nn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">input_data</span><span class="p">,</span> <span class="n">output_data</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># Make predictions using the trained model</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">input_data</span><span class="p">)</span>
+
+<span class="c1"># Calculate and print accuracy</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Accuracy: </span><span class="si">{</span><span class="n">nn</span><span class="o">.</span><span class="n">accuracy</span><span class="p">(</span><span class="n">output_data</span><span class="p">,</span><span class="w"> </span><span class="n">y_pred</span><span class="p">)</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">%&#39;</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

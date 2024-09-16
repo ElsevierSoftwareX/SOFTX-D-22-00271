@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>rosenpy.utils.init_func &mdash; rosenpy 2.1 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../_static/ico_rosenpy.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../../index.html">
+            
+              <img src="../../../_static/logo_rosenpy.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../example_cvffnn_1.html">example_cvffnn_1 module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../example_cvrbf_1.html">example_cvrbf_1 module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../example_fcrbf_1.html">example_fcrbf_1 module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../example_ptrbf_1.html">example_ptrbf_1 module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../example_ptrbf_2.html">example_ptrbf_2 module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../example_scffnn_1.html">example_scffnn_1 module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">rosenpy</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">rosenpy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">rosenpy.utils.init_func</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for rosenpy.utils.init_func</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">**RosenPy: An Open Source Python Framework for Complex-Valued Neural Networks**.</span>
+<span class="sd">*Copyright © A. A. Cruz, K. S. Mayer, D. S. Arantes*.</span>
+
+<span class="sd">*License*</span>
+
+<span class="sd">This file is part of RosenPy.</span>
+<span class="sd">RosenPy is an open source framework distributed under the terms of the GNU General </span>
+<span class="sd">Public License, as published by the Free Software Foundation, either version 3 of </span>
+<span class="sd">the License, or (at your option) any later version. For additional information on </span>
+<span class="sd">license terms, please open the Readme.md file.</span>
+
+<span class="sd">RosenPy is distributed in the hope that it will be useful to every user, but</span>
+<span class="sd">WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="sd">MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. </span>
+<span class="sd">See the GNU General Public License for more details. </span>
+
+<span class="sd">You should have received a copy of the GNU General Public License</span>
+<span class="sd">along with RosenPy. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">This file contains various initialization functions for initializing complex matrices.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="zeros"><a class="viewcode-back" href="../../../rosenpy.utils.html#rosenpy.utils.init_func.zeros">[docs]</a><span class="k">def</span> <span class="nf">zeros</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Initializes a complex matrix with all elements set to zero.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    module : module        </span>
+<span class="sd">        CuPy/Numpy module.</span>
+<span class="sd">    rows : int</span>
+<span class="sd">        The number of rows in the matrix.</span>
+<span class="sd">    cols : int</span>
+<span class="sd">        The number of columns in the matrix.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    array-like</span>
+<span class="sd">        A complex matrix of size (rows, cols) with all elements set to zero.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">module</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="zeros_real"><a class="viewcode-back" href="../../../rosenpy.utils.html#rosenpy.utils.init_func.zeros_real">[docs]</a><span class="k">def</span> <span class="nf">zeros_real</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Initializes a real matrix with all elements set to zero.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    module : module        </span>
+<span class="sd">        CuPy/Numpy module.</span>
+<span class="sd">    rows : int</span>
+<span class="sd">        The number of rows in the matrix.</span>
+<span class="sd">    cols : int</span>
+<span class="sd">        The number of columns in the matrix.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    array-like</span>
+<span class="sd">        A real matrix of size (rows, cols) with all elements set to zero.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">module</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ones"><a class="viewcode-back" href="../../../rosenpy.utils.html#rosenpy.utils.init_func.ones">[docs]</a><span class="k">def</span> <span class="nf">ones</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Initializes a complex matrix with all elements set to one.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    module : module        </span>
+<span class="sd">        CuPy/Numpy module.</span>
+<span class="sd">    rows : int</span>
+<span class="sd">        The number of rows in the matrix.</span>
+<span class="sd">    cols : int</span>
+<span class="sd">        The number of columns in the matrix.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    array-like</span>
+<span class="sd">        A complex matrix of size (rows, cols) with all elements set to one.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">module</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span></div>
+
+
+<div class="viewcode-block" id="ones_real"><a class="viewcode-back" href="../../../rosenpy.utils.html#rosenpy.utils.init_func.ones_real">[docs]</a><span class="k">def</span> <span class="nf">ones_real</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Initializes a real matrix with all elements set to one.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    module : module        </span>
+<span class="sd">        CuPy/Numpy module.</span>
+<span class="sd">    rows : int</span>
+<span class="sd">        The number of rows in the matrix.</span>
+<span class="sd">    cols : int</span>
+<span class="sd">        The number of columns in the matrix.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    array-like</span>
+<span class="sd">        A real matrix of size (rows, cols) with all elements set to one.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">module</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="random_normal"><a class="viewcode-back" href="../../../rosenpy.utils.html#rosenpy.utils.init_func.random_normal">[docs]</a><span class="k">def</span> <span class="nf">random_normal</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Initializes a complex matrix with elements sampled from a normal distribution.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    module : module        </span>
+<span class="sd">        CuPy/Numpy module.</span>
+<span class="sd">    rows : int</span>
+<span class="sd">        The number of rows in the matrix.</span>
+<span class="sd">    cols : int</span>
+<span class="sd">        The number of columns in the matrix.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    array-like</span>
+<span class="sd">        A complex matrix of size (rows, cols) with elements sampled from a normal distribution.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">real</span> <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">module</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.5</span>
+    <span class="n">imag</span> <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">module</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.5</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">real</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">imag</span><span class="p">)</span> <span class="o">/</span> <span class="mi">10</span></div>
+
+
+<div class="viewcode-block" id="random_uniform"><a class="viewcode-back" href="../../../rosenpy.utils.html#rosenpy.utils.init_func.random_uniform">[docs]</a><span class="k">def</span> <span class="nf">random_uniform</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Initializes a complex matrix with elements sampled from a uniform distribution.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    module : module        </span>
+<span class="sd">        CuPy/Numpy module.</span>
+<span class="sd">    rows : int</span>
+<span class="sd">        The number of rows in the matrix.</span>
+<span class="sd">    cols : int</span>
+<span class="sd">        The number of columns in the matrix.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    array-like</span>
+<span class="sd">        A complex matrix of size (rows, cols) with elements sampled from a uniform distribution.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">real</span> <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">module</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="n">imag</span> <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">module</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">real</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">imag</span><span class="p">)</span> <span class="o">/</span> <span class="mi">10</span></div>
+
+
+<div class="viewcode-block" id="glorot_normal"><a class="viewcode-back" href="../../../rosenpy.utils.html#rosenpy.utils.init_func.glorot_normal">[docs]</a><span class="k">def</span> <span class="nf">glorot_normal</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Initializes a complex matrix using the Glorot normal initialization method.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    module : module        </span>
+<span class="sd">        CuPy/Numpy module.</span>
+<span class="sd">    rows : int</span>
+<span class="sd">        The number of rows in the matrix.</span>
+<span class="sd">    cols : int</span>
+<span class="sd">        The number of columns in the matrix.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    array-like</span>
+<span class="sd">        A complex matrix of size (rows, cols) initialized using the Glorot normal initialization method.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">std_dev</span> <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">rows</span> <span class="o">+</span> <span class="n">cols</span><span class="p">))</span> <span class="o">/</span> <span class="mi">10</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">std_dev</span> <span class="o">*</span> <span class="n">module</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">std_dev</span> <span class="o">*</span> <span class="n">module</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">))</span> <span class="o">/</span> <span class="mi">10</span></div>
+
+
+<div class="viewcode-block" id="glorot_uniform"><a class="viewcode-back" href="../../../rosenpy.utils.html#rosenpy.utils.init_func.glorot_uniform">[docs]</a><span class="k">def</span> <span class="nf">glorot_uniform</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Initializes a complex matrix using the Glorot uniform initialization method.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    module : module        </span>
+<span class="sd">        CuPy/Numpy module.</span>
+<span class="sd">    rows : int</span>
+<span class="sd">        The number of rows in the matrix.</span>
+<span class="sd">    cols : int</span>
+<span class="sd">        The number of columns in the matrix.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    array-like</span>
+<span class="sd">        A complex matrix of size (rows, cols) initialized using the Glorot uniform initialization method.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">std_dev</span> <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">6.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">rows</span> <span class="o">+</span> <span class="n">cols</span><span class="p">))</span> <span class="o">/</span> <span class="mi">10</span>
+    <span class="k">return</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">std_dev</span> <span class="o">*</span> <span class="n">module</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">)</span> <span class="o">-</span> <span class="n">std_dev</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="p">(</span><span class="n">std_dev</span> <span class="o">*</span> <span class="n">module</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">)</span> <span class="o">-</span> <span class="n">std_dev</span><span class="p">))</span> <span class="o">/</span> <span class="mi">5</span></div>
+
+
+<div class="viewcode-block" id="rbf_default"><a class="viewcode-back" href="../../../rosenpy.utils.html#rosenpy.utils.init_func.rbf_default">[docs]</a><span class="k">def</span> <span class="nf">rbf_default</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Initializes a complex matrix with elements generated from a random binary distribution.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    module : module        </span>
+<span class="sd">        CuPy/Numpy module.</span>
+<span class="sd">    rows : int</span>
+<span class="sd">        The number of rows in the matrix.</span>
+<span class="sd">    cols : int</span>
+<span class="sd">        The number of columns in the matrix.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    array-like</span>
+<span class="sd">        A complex matrix of size (rows, cols) with elements generated from a random binary distribution.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">module</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">[</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">])</span> <span class="o">*</span> <span class="mf">0.7</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="p">(</span><span class="n">module</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">[</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">])</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.7</span></div>
+
+
+<div class="viewcode-block" id="ru_gamma_ptrbf"><a class="viewcode-back" href="../../../rosenpy.utils.html#rosenpy.utils.init_func.ru_gamma_ptrbf">[docs]</a><span class="k">def</span> <span class="nf">ru_gamma_ptrbf</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Initializes a complex matrix with elements sampled from a uniform distribution.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    module : module        </span>
+<span class="sd">        CuPy/Numpy module.</span>
+<span class="sd">    rows : int</span>
+<span class="sd">        The number of rows in the matrix.</span>
+<span class="sd">    cols : int</span>
+<span class="sd">        The number of columns in the matrix.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    array-like</span>
+<span class="sd">        A complex matrix of size (rows, cols) with elements sampled from a uniform distribution.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">real</span> <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">module</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="n">imag</span> <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">module</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">real</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">imag</span><span class="p">)</span> <span class="o">/</span> <span class="n">module</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">cols</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ru_weights_ptrbf"><a class="viewcode-back" href="../../../rosenpy.utils.html#rosenpy.utils.init_func.ru_weights_ptrbf">[docs]</a><span class="k">def</span> <span class="nf">ru_weights_ptrbf</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Initializes a complex matrix with elements sampled from a uniform distribution.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    module : module        </span>
+<span class="sd">        CuPy/Numpy module.</span>
+<span class="sd">    rows : int</span>
+<span class="sd">        The number of rows in the matrix.</span>
+<span class="sd">    cols : int</span>
+<span class="sd">        The number of columns in the matrix.</span>
+<span class="sd">    i : int, optional</span>
+<span class="sd">        The number of neurons in input (default is 0).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    array-like</span>
+<span class="sd">        A complex matrix of size (rows, cols) with elements sampled from a uniform distribution.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">real</span> <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">module</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="n">imag</span> <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">module</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">real</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">imag</span><span class="p">)</span> <span class="o">*</span> <span class="n">module</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">module</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">rows</span> <span class="o">*</span> <span class="n">cols</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="opt_ptrbf_gamma"><a class="viewcode-back" href="../../../rosenpy.utils.html#rosenpy.utils.init_func.opt_ptrbf_gamma">[docs]</a><span class="k">def</span> <span class="nf">opt_ptrbf_gamma</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Initializes complex gamma weights with elements sampled from a uniform distribution.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    module : module        </span>
+<span class="sd">        CuPy/Numpy module.</span>
+<span class="sd">    rows : int</span>
+<span class="sd">        The number of rows in the matrix.</span>
+<span class="sd">    cols : int</span>
+<span class="sd">        The number of columns in the matrix.</span>
+<span class="sd">    i : int, optional</span>
+<span class="sd">        The number of neurons in input (default is 0).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    array-like</span>
+<span class="sd">        A complex gamma weight matrix of size (rows, cols) with elements sampled from a uniform distribution.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">real</span> <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="n">module</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">module</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">))</span>
+    <span class="n">imag</span> <span class="o">=</span> <span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">module</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="n">module</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">module</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">))</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">real</span> <span class="o">+</span> <span class="n">imag</span><span class="p">)</span> <span class="o">*</span> <span class="n">module</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">cols</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="opt_ptrbf_weights"><a class="viewcode-back" href="../../../rosenpy.utils.html#rosenpy.utils.init_func.opt_ptrbf_weights">[docs]</a><span class="k">def</span> <span class="nf">opt_ptrbf_weights</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Initializes complex weights with elements sampled from a uniform distribution and adjusted for optimization.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    module : module        </span>
+<span class="sd">        CuPy/Numpy module.</span>
+<span class="sd">    rows : int</span>
+<span class="sd">        The number of rows in the matrix.</span>
+<span class="sd">    cols : int</span>
+<span class="sd">        The number of columns in the matrix.</span>
+<span class="sd">    i : int, optional</span>
+<span class="sd">        The number of neurons in input (default is 0).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    array-like</span>
+<span class="sd">        A complex weight matrix of size (rows, cols) with elements sampled from a uniform distribution</span>
+<span class="sd">        and adjusted for optimization.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">real</span> <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="n">module</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">module</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">))</span>
+    <span class="n">real</span> <span class="o">=</span> <span class="n">real</span> <span class="o">-</span> <span class="n">module</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">real</span><span class="p">)</span>
+    <span class="n">imag</span> <span class="o">=</span> <span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">module</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="n">module</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">module</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">))</span>
+    <span class="n">imag</span> <span class="o">=</span> <span class="n">imag</span> <span class="o">-</span> <span class="n">module</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">imag</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">real</span> <span class="o">+</span> <span class="n">imag</span><span class="p">)</span> <span class="o">*</span> <span class="n">module</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="mi">5</span> <span class="o">*</span> <span class="n">i</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">12</span> <span class="o">*</span> <span class="n">rows</span> <span class="o">*</span> <span class="n">cols</span> <span class="o">*</span> <span class="n">module</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)))</span> <span class="o">-</span> <span class="n">module</span><span class="o">.</span><span class="n">mean</span><span class="p">((</span><span class="n">real</span> <span class="o">+</span> <span class="n">imag</span><span class="p">)</span> <span class="o">*</span> <span class="n">module</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="mi">5</span> <span class="o">*</span> <span class="n">i</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">12</span> <span class="o">*</span> <span class="n">rows</span> <span class="o">*</span> <span class="n">cols</span> <span class="o">*</span> <span class="n">module</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">))),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="opt_conv_ptrbf_weights"><a class="viewcode-back" href="../../../rosenpy.utils.html#rosenpy.utils.init_func.opt_conv_ptrbf_weights">[docs]</a><span class="k">def</span> <span class="nf">opt_conv_ptrbf_weights</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Initializes complex convolutional weights with elements sampled from a uniform distribution and adjusted for optimization.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    module : module        </span>
+<span class="sd">        CuPy/Numpy module.</span>
+<span class="sd">    rows : int</span>
+<span class="sd">        The number of rows in the matrix.</span>
+<span class="sd">    cols : int</span>
+<span class="sd">        The number of columns in the matrix.</span>
+<span class="sd">    i : int, optional</span>
+<span class="sd">        The number of neurons in input (default is 0).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    array-like</span>
+<span class="sd">        A complex convolutional weight matrix of size (rows, cols) with elements sampled from a uniform distribution</span>
+<span class="sd">        and adjusted for optimization.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">real</span> <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="n">module</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">module</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">))</span>
+    <span class="n">real</span> <span class="o">=</span> <span class="n">real</span> <span class="o">-</span> <span class="n">module</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">real</span><span class="p">)</span>
+    <span class="n">imag</span> <span class="o">=</span> <span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">module</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="n">module</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">module</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">))</span>
+    <span class="n">imag</span> <span class="o">=</span> <span class="n">imag</span> <span class="o">-</span> <span class="n">module</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">imag</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">real</span> <span class="o">+</span> <span class="n">imag</span><span class="p">)</span> <span class="o">*</span> <span class="n">module</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="mi">5</span> <span class="o">*</span> <span class="n">i</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">12</span> <span class="o">*</span> <span class="n">rows</span> <span class="o">*</span> <span class="n">cols</span> <span class="o">*</span> <span class="n">module</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)))</span> <span class="o">/</span> <span class="mi">100</span></div>
+
+
+<div class="viewcode-block" id="opt_crbf_gamma"><a class="viewcode-back" href="../../../rosenpy.utils.html#rosenpy.utils.init_func.opt_crbf_gamma">[docs]</a><span class="k">def</span> <span class="nf">opt_crbf_gamma</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Initializes complex gamma weights for CRBF (Complex Radial Basis Function) with elements sampled from a uniform distribution.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    module : module        </span>
+<span class="sd">        CuPy/Numpy module.</span>
+<span class="sd">    rows : int</span>
+<span class="sd">        The number of rows in the matrix.</span>
+<span class="sd">    cols : int</span>
+<span class="sd">        The number of columns in the matrix.</span>
+<span class="sd">    i : int, optional</span>
+<span class="sd">        The number of neurons in input (default is 0).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    array-like</span>
+<span class="sd">        A complex gamma weight matrix of size (rows, cols) for CRBF with elements sampled from a uniform distribution.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">real</span> <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="n">module</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">module</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">))</span>
+    <span class="n">imag</span> <span class="o">=</span> <span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">module</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="n">module</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">module</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">))</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">real</span> <span class="o">+</span> <span class="n">imag</span><span class="p">)</span> <span class="o">*</span> <span class="n">module</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">cols</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="opt_crbf_weights"><a class="viewcode-back" href="../../../rosenpy.utils.html#rosenpy.utils.init_func.opt_crbf_weights">[docs]</a><span class="k">def</span> <span class="nf">opt_crbf_weights</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Initializes complex weights for CRBF (Complex Radial Basis Function) with elements sampled from a uniform distribution and adjusted for optimization.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    module : module        </span>
+<span class="sd">        CuPy/Numpy module.</span>
+<span class="sd">    rows : int</span>
+<span class="sd">        The number of rows in the matrix.</span>
+<span class="sd">    cols : int</span>
+<span class="sd">        The number of columns in the matrix.</span>
+<span class="sd">    i : int, optional</span>
+<span class="sd">        The number of neurons in input (default is 0).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    array-like</span>
+<span class="sd">        A complex weight matrix of size (rows, cols) for CRBF with elements sampled from a uniform distribution</span>
+<span class="sd">        and adjusted for optimization.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">real</span> <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="n">module</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">module</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">))</span>
+    <span class="n">real</span> <span class="o">=</span> <span class="n">real</span> <span class="o">-</span> <span class="n">module</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">real</span><span class="p">)</span>
+    <span class="n">imag</span> <span class="o">=</span> <span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">module</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="n">module</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">module</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">))</span>
+    <span class="n">imag</span> <span class="o">=</span> <span class="n">imag</span> <span class="o">-</span> <span class="n">module</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">imag</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">real</span> <span class="o">+</span> <span class="n">imag</span><span class="p">)</span> <span class="o">*</span> <span class="n">module</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">i</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">12</span> <span class="o">*</span> <span class="n">rows</span> <span class="o">*</span> <span class="n">cols</span> <span class="o">*</span> <span class="n">module</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)))</span> <span class="o">-</span> <span class="n">module</span><span class="o">.</span><span class="n">mean</span><span class="p">((</span><span class="n">real</span> <span class="o">+</span> <span class="n">imag</span><span class="p">)</span> <span class="o">*</span> <span class="n">module</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">i</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">12</span> <span class="o">*</span> <span class="n">rows</span> <span class="o">*</span> <span class="n">cols</span> <span class="o">*</span> <span class="n">module</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">))),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
