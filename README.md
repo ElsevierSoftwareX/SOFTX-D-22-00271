@@ -8,7 +8,7 @@
 - It enables the incorporation of properties intrinsic to neural networks, such as L2 regularization, optmization, early stopping, mini-batch, and learning rate decay.
 
 ### Dependencies
-- Python3.6+, Numpy
+- Python3.6+, Numpy, Cupy
 
 ### Authors
 - Ariadne Arrais Cruz – ariadne.arrais@gmail.com
