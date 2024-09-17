@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>rosenpy.utils package &mdash; RosenPy 2.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/ico_rosenpy.ico"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="utils.act_func module" href="utils.act_func.html" />
+    <link rel="prev" title="model.rp_optimizer module" href="model.rp_optimizer.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/logo_rosenpy.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome to RosenPy’s documentation!</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="rosenpy.html">rosenpy package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="rosenpy.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="rosenpy.model.html">rosenpy.model package</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">rosenpy.utils package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="utils.act_func.html">utils.act_func module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.batch_gen_func.html">utils.batch_gen_func module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.cost_func.html">utils.cost_func module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.decay_func.html">utils.decay_func module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.init_func.html">utils.init_func module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.plot.html">utils.plot module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.reg_func.html">utils.reg_func module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.select_module.html">utils.select_module module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.utils.html">utils.utils module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RosenPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="rosenpy.html">rosenpy package</a></li>
+      <li class="breadcrumb-item active">rosenpy.utils package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/rosenpy.utils.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="rosenpy-utils-package">
+<h1>rosenpy.utils package<a class="headerlink" href="#rosenpy-utils-package" title="Permalink to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="utils.act_func.html">utils.act_func module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="utils.act_func.html#utils.act_func.acos"><code class="docutils literal notranslate"><span class="pre">acos()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.act_func.html#utils.act_func.asin"><code class="docutils literal notranslate"><span class="pre">asin()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.act_func.html#utils.act_func.asinh"><code class="docutils literal notranslate"><span class="pre">asinh()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.act_func.html#utils.act_func.atan"><code class="docutils literal notranslate"><span class="pre">atan()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.act_func.html#utils.act_func.atanh"><code class="docutils literal notranslate"><span class="pre">atanh()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.act_func.html#utils.act_func.linear"><code class="docutils literal notranslate"><span class="pre">linear()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.act_func.html#utils.act_func.sech"><code class="docutils literal notranslate"><span class="pre">sech()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.act_func.html#utils.act_func.sin"><code class="docutils literal notranslate"><span class="pre">sin()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.act_func.html#utils.act_func.sinh"><code class="docutils literal notranslate"><span class="pre">sinh()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.act_func.html#utils.act_func.split_complex"><code class="docutils literal notranslate"><span class="pre">split_complex()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.act_func.html#utils.act_func.tan"><code class="docutils literal notranslate"><span class="pre">tan()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.act_func.html#utils.act_func.tanh"><code class="docutils literal notranslate"><span class="pre">tanh()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="utils.batch_gen_func.html">utils.batch_gen_func module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="utils.batch_gen_func.html#utils.batch_gen_func.batch_sequential"><code class="docutils literal notranslate"><span class="pre">batch_sequential()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.batch_gen_func.html#utils.batch_gen_func.batch_shuffle"><code class="docutils literal notranslate"><span class="pre">batch_shuffle()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="utils.cost_func.html">utils.cost_func module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="utils.cost_func.html#utils.cost_func.mse"><code class="docutils literal notranslate"><span class="pre">mse()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="utils.decay_func.html">utils.decay_func module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="utils.decay_func.html#utils.decay_func.exponential_decay"><code class="docutils literal notranslate"><span class="pre">exponential_decay()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.decay_func.html#utils.decay_func.none_decay"><code class="docutils literal notranslate"><span class="pre">none_decay()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.decay_func.html#utils.decay_func.staircase"><code class="docutils literal notranslate"><span class="pre">staircase()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.decay_func.html#utils.decay_func.time_based_decay"><code class="docutils literal notranslate"><span class="pre">time_based_decay()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="utils.init_func.html">utils.init_func module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="utils.init_func.html#utils.init_func.glorot_normal"><code class="docutils literal notranslate"><span class="pre">glorot_normal()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.init_func.html#utils.init_func.glorot_uniform"><code class="docutils literal notranslate"><span class="pre">glorot_uniform()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.init_func.html#utils.init_func.ones"><code class="docutils literal notranslate"><span class="pre">ones()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.init_func.html#utils.init_func.ones_real"><code class="docutils literal notranslate"><span class="pre">ones_real()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.init_func.html#utils.init_func.opt_conv_ptrbf_weights"><code class="docutils literal notranslate"><span class="pre">opt_conv_ptrbf_weights()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.init_func.html#utils.init_func.opt_crbf_gamma"><code class="docutils literal notranslate"><span class="pre">opt_crbf_gamma()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.init_func.html#utils.init_func.opt_crbf_weights"><code class="docutils literal notranslate"><span class="pre">opt_crbf_weights()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.init_func.html#utils.init_func.opt_ptrbf_gamma"><code class="docutils literal notranslate"><span class="pre">opt_ptrbf_gamma()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.init_func.html#utils.init_func.opt_ptrbf_weights"><code class="docutils literal notranslate"><span class="pre">opt_ptrbf_weights()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.init_func.html#utils.init_func.random_normal"><code class="docutils literal notranslate"><span class="pre">random_normal()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.init_func.html#utils.init_func.random_uniform"><code class="docutils literal notranslate"><span class="pre">random_uniform()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.init_func.html#utils.init_func.rbf_default"><code class="docutils literal notranslate"><span class="pre">rbf_default()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.init_func.html#utils.init_func.ru_gamma_ptrbf"><code class="docutils literal notranslate"><span class="pre">ru_gamma_ptrbf()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.init_func.html#utils.init_func.ru_weights_ptrbf"><code class="docutils literal notranslate"><span class="pre">ru_weights_ptrbf()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.init_func.html#utils.init_func.zeros"><code class="docutils literal notranslate"><span class="pre">zeros()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.init_func.html#utils.init_func.zeros_real"><code class="docutils literal notranslate"><span class="pre">zeros_real()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="utils.plot.html">utils.plot module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="utils.plot.html#utils.plot.classification_predictions"><code class="docutils literal notranslate"><span class="pre">classification_predictions()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.plot.html#utils.plot.dsa"><code class="docutils literal notranslate"><span class="pre">dsa()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.plot.html#utils.plot.make_spiral"><code class="docutils literal notranslate"><span class="pre">make_spiral()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="utils.reg_func.html">utils.reg_func module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="utils.reg_func.html#utils.reg_func.l2_regularization"><code class="docutils literal notranslate"><span class="pre">l2_regularization()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="utils.select_module.html">utils.select_module module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="utils.select_module.html#utils.select_module.select_module"><code class="docutils literal notranslate"><span class="pre">select_module()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="utils.utils.html">utils.utils module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="utils.utils.html#utils.utils.split_set"><code class="docutils literal notranslate"><span class="pre">split_set()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="model.rp_optimizer.html" class="btn btn-neutral float-left" title="model.rp_optimizer module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="utils.act_func.html" class="btn btn-neutral float-right" title="utils.act_func module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Ariadne A. Cruz, Kayol S. Mayer, Dalton S. Arantes.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
