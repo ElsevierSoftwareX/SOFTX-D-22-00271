@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>rosenpy &mdash; RosenPy 2.1 documentation</title>
+      <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="static/ico_rosenpy.ico"/>
+  <!--[if lt IE 9]>
+    <script src="static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="static/jquery.js"></script>
+        <script src="static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="static/documentation_options.js"></script>
+        <script src="static/doctools.js"></script>
+        <script src="static/sphinx_highlight.js"></script>
+    <script src="static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="static/logo_rosenpy.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome to RosenPy’s documentation!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rosenpy.html">rosenpy package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RosenPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">rosenpy</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="sources/modules.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="rosenpy">
+<h1>rosenpy<a class="headerlink" href="#rosenpy" title="Permalink to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="model.html">model package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="model.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="model.html#module-model.cvffnn">model.cvffnn module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="model.html#model.cvffnn.CVFFNN"><code class="docutils literal notranslate"><span class="pre">CVFFNN</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.cvffnn.CVFFNN.accuracy"><code class="docutils literal notranslate"><span class="pre">CVFFNN.accuracy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.cvffnn.CVFFNN.add_layer"><code class="docutils literal notranslate"><span class="pre">CVFFNN.add_layer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.cvffnn.CVFFNN.backprop"><code class="docutils literal notranslate"><span class="pre">CVFFNN.backprop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.cvffnn.CVFFNN.convert_data"><code class="docutils literal notranslate"><span class="pre">CVFFNN.convert_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.cvffnn.CVFFNN.denormalize_outputs"><code class="docutils literal notranslate"><span class="pre">CVFFNN.denormalize_outputs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.cvffnn.CVFFNN.feedforward"><code class="docutils literal notranslate"><span class="pre">CVFFNN.feedforward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.cvffnn.CVFFNN.fit"><code class="docutils literal notranslate"><span class="pre">CVFFNN.fit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.cvffnn.CVFFNN.get_history"><code class="docutils literal notranslate"><span class="pre">CVFFNN.get_history()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.cvffnn.CVFFNN.normalize_data"><code class="docutils literal notranslate"><span class="pre">CVFFNN.normalize_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.cvffnn.CVFFNN.predict"><code class="docutils literal notranslate"><span class="pre">CVFFNN.predict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.cvffnn.CVFFNN.update_learning_rate"><code class="docutils literal notranslate"><span class="pre">CVFFNN.update_learning_rate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.cvffnn.CVFFNN.verify_input"><code class="docutils literal notranslate"><span class="pre">CVFFNN.verify_input()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="model.html#module-model.cvrbfnn">model.cvrbfnn module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="model.html#model.cvrbfnn.CVRBFNN"><code class="docutils literal notranslate"><span class="pre">CVRBFNN</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.cvrbfnn.CVRBFNN.accuracy"><code class="docutils literal notranslate"><span class="pre">CVRBFNN.accuracy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.cvrbfnn.CVRBFNN.add_layer"><code class="docutils literal notranslate"><span class="pre">CVRBFNN.add_layer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.cvrbfnn.CVRBFNN.backprop"><code class="docutils literal notranslate"><span class="pre">CVRBFNN.backprop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.cvrbfnn.CVRBFNN.convert_data"><code class="docutils literal notranslate"><span class="pre">CVRBFNN.convert_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.cvrbfnn.CVRBFNN.denormalize_outputs"><code class="docutils literal notranslate"><span class="pre">CVRBFNN.denormalize_outputs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.cvrbfnn.CVRBFNN.feedforward"><code class="docutils literal notranslate"><span class="pre">CVRBFNN.feedforward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.cvrbfnn.CVRBFNN.fit"><code class="docutils literal notranslate"><span class="pre">CVRBFNN.fit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.cvrbfnn.CVRBFNN.get_history"><code class="docutils literal notranslate"><span class="pre">CVRBFNN.get_history()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.cvrbfnn.CVRBFNN.normalize_data"><code class="docutils literal notranslate"><span class="pre">CVRBFNN.normalize_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.cvrbfnn.CVRBFNN.predict"><code class="docutils literal notranslate"><span class="pre">CVRBFNN.predict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.cvrbfnn.CVRBFNN.update_learning_rate"><code class="docutils literal notranslate"><span class="pre">CVRBFNN.update_learning_rate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.cvrbfnn.CVRBFNN.verify_input"><code class="docutils literal notranslate"><span class="pre">CVRBFNN.verify_input()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="model.html#module-model.fcrbfnn">model.fcrbfnn module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="model.html#model.fcrbfnn.FCRBFNN"><code class="docutils literal notranslate"><span class="pre">FCRBFNN</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.fcrbfnn.FCRBFNN.accuracy"><code class="docutils literal notranslate"><span class="pre">FCRBFNN.accuracy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.fcrbfnn.FCRBFNN.add_layer"><code class="docutils literal notranslate"><span class="pre">FCRBFNN.add_layer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.fcrbfnn.FCRBFNN.backprop"><code class="docutils literal notranslate"><span class="pre">FCRBFNN.backprop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.fcrbfnn.FCRBFNN.convert_data"><code class="docutils literal notranslate"><span class="pre">FCRBFNN.convert_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.fcrbfnn.FCRBFNN.denormalize_outputs"><code class="docutils literal notranslate"><span class="pre">FCRBFNN.denormalize_outputs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.fcrbfnn.FCRBFNN.feedforward"><code class="docutils literal notranslate"><span class="pre">FCRBFNN.feedforward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.fcrbfnn.FCRBFNN.fit"><code class="docutils literal notranslate"><span class="pre">FCRBFNN.fit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.fcrbfnn.FCRBFNN.get_history"><code class="docutils literal notranslate"><span class="pre">FCRBFNN.get_history()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.fcrbfnn.FCRBFNN.normalize_data"><code class="docutils literal notranslate"><span class="pre">FCRBFNN.normalize_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.fcrbfnn.FCRBFNN.predict"><code class="docutils literal notranslate"><span class="pre">FCRBFNN.predict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.fcrbfnn.FCRBFNN.update_learning_rate"><code class="docutils literal notranslate"><span class="pre">FCRBFNN.update_learning_rate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.fcrbfnn.FCRBFNN.verify_input"><code class="docutils literal notranslate"><span class="pre">FCRBFNN.verify_input()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="model.html#module-model.ptrbfnnc">model.ptrbfnnc module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="model.html#model.ptrbfnnc.PTRBFNN"><code class="docutils literal notranslate"><span class="pre">PTRBFNN</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.ptrbfnnc.PTRBFNN.accuracy"><code class="docutils literal notranslate"><span class="pre">PTRBFNN.accuracy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.ptrbfnnc.PTRBFNN.add_layer"><code class="docutils literal notranslate"><span class="pre">PTRBFNN.add_layer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.ptrbfnnc.PTRBFNN.backprop"><code class="docutils literal notranslate"><span class="pre">PTRBFNN.backprop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.ptrbfnnc.PTRBFNN.convert_data"><code class="docutils literal notranslate"><span class="pre">PTRBFNN.convert_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.ptrbfnnc.PTRBFNN.denormalize_outputs"><code class="docutils literal notranslate"><span class="pre">PTRBFNN.denormalize_outputs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.ptrbfnnc.PTRBFNN.feedforward"><code class="docutils literal notranslate"><span class="pre">PTRBFNN.feedforward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.ptrbfnnc.PTRBFNN.fit"><code class="docutils literal notranslate"><span class="pre">PTRBFNN.fit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.ptrbfnnc.PTRBFNN.get_history"><code class="docutils literal notranslate"><span class="pre">PTRBFNN.get_history()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.ptrbfnnc.PTRBFNN.normalize_data"><code class="docutils literal notranslate"><span class="pre">PTRBFNN.normalize_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.ptrbfnnc.PTRBFNN.predict"><code class="docutils literal notranslate"><span class="pre">PTRBFNN.predict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.ptrbfnnc.PTRBFNN.update_learning_rate"><code class="docutils literal notranslate"><span class="pre">PTRBFNN.update_learning_rate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.ptrbfnnc.PTRBFNN.verify_input"><code class="docutils literal notranslate"><span class="pre">PTRBFNN.verify_input()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="model.html#module-model.rp_layer">model.rp_layer module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="model.html#model.rp_layer.Layer"><code class="docutils literal notranslate"><span class="pre">Layer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="model.html#module-model.rp_nn">model.rp_nn module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="model.html#model.rp_nn.NeuralNetwork"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.rp_nn.NeuralNetwork.accuracy"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork.accuracy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.rp_nn.NeuralNetwork.add_layer"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork.add_layer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.rp_nn.NeuralNetwork.convert_data"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork.convert_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.rp_nn.NeuralNetwork.denormalize_outputs"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork.denormalize_outputs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.rp_nn.NeuralNetwork.fit"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork.fit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.rp_nn.NeuralNetwork.get_history"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork.get_history()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.rp_nn.NeuralNetwork.normalize_data"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork.normalize_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.rp_nn.NeuralNetwork.predict"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork.predict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.rp_nn.NeuralNetwork.update_learning_rate"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork.update_learning_rate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.rp_nn.NeuralNetwork.verify_input"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork.verify_input()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="model.html#module-model.rp_optimizer">model.rp_optimizer module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="model.html#model.rp_optimizer.AMSGrad"><code class="docutils literal notranslate"><span class="pre">AMSGrad</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.rp_optimizer.AMSGrad.set_module"><code class="docutils literal notranslate"><span class="pre">AMSGrad.set_module()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.rp_optimizer.AMSGrad.update_parameters"><code class="docutils literal notranslate"><span class="pre">AMSGrad.update_parameters()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="model.html#model.rp_optimizer.AdaGrad"><code class="docutils literal notranslate"><span class="pre">AdaGrad</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.rp_optimizer.AdaGrad.set_module"><code class="docutils literal notranslate"><span class="pre">AdaGrad.set_module()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.rp_optimizer.AdaGrad.update_parameters"><code class="docutils literal notranslate"><span class="pre">AdaGrad.update_parameters()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="model.html#model.rp_optimizer.Adam"><code class="docutils literal notranslate"><span class="pre">Adam</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.rp_optimizer.Adam.set_module"><code class="docutils literal notranslate"><span class="pre">Adam.set_module()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.rp_optimizer.Adam.update_parameters"><code class="docutils literal notranslate"><span class="pre">Adam.update_parameters()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="model.html#model.rp_optimizer.Adamax"><code class="docutils literal notranslate"><span class="pre">Adamax</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.rp_optimizer.Adamax.set_module"><code class="docutils literal notranslate"><span class="pre">Adamax.set_module()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.rp_optimizer.Adamax.update_parameters"><code class="docutils literal notranslate"><span class="pre">Adamax.update_parameters()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="model.html#model.rp_optimizer.CVAMSGrad"><code class="docutils literal notranslate"><span class="pre">CVAMSGrad</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.rp_optimizer.CVAMSGrad.set_module"><code class="docutils literal notranslate"><span class="pre">CVAMSGrad.set_module()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.rp_optimizer.CVAMSGrad.update_parameters"><code class="docutils literal notranslate"><span class="pre">CVAMSGrad.update_parameters()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="model.html#model.rp_optimizer.CVAdaGrad"><code class="docutils literal notranslate"><span class="pre">CVAdaGrad</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.rp_optimizer.CVAdaGrad.set_module"><code class="docutils literal notranslate"><span class="pre">CVAdaGrad.set_module()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.rp_optimizer.CVAdaGrad.update_parameters"><code class="docutils literal notranslate"><span class="pre">CVAdaGrad.update_parameters()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="model.html#model.rp_optimizer.CVAdam"><code class="docutils literal notranslate"><span class="pre">CVAdam</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.rp_optimizer.CVAdam.set_module"><code class="docutils literal notranslate"><span class="pre">CVAdam.set_module()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.rp_optimizer.CVAdam.update_parameters"><code class="docutils literal notranslate"><span class="pre">CVAdam.update_parameters()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="model.html#model.rp_optimizer.CVAdamax"><code class="docutils literal notranslate"><span class="pre">CVAdamax</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.rp_optimizer.CVAdamax.set_module"><code class="docutils literal notranslate"><span class="pre">CVAdamax.set_module()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.rp_optimizer.CVAdamax.update_parameters"><code class="docutils literal notranslate"><span class="pre">CVAdamax.update_parameters()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="model.html#model.rp_optimizer.CVNadam"><code class="docutils literal notranslate"><span class="pre">CVNadam</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.rp_optimizer.CVNadam.set_module"><code class="docutils literal notranslate"><span class="pre">CVNadam.set_module()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.rp_optimizer.CVNadam.update_parameters"><code class="docutils literal notranslate"><span class="pre">CVNadam.update_parameters()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="model.html#model.rp_optimizer.CVRMSprop"><code class="docutils literal notranslate"><span class="pre">CVRMSprop</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.rp_optimizer.CVRMSprop.set_module"><code class="docutils literal notranslate"><span class="pre">CVRMSprop.set_module()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.rp_optimizer.CVRMSprop.update_parameters"><code class="docutils literal notranslate"><span class="pre">CVRMSprop.update_parameters()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="model.html#model.rp_optimizer.GradientDescent"><code class="docutils literal notranslate"><span class="pre">GradientDescent</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.rp_optimizer.GradientDescent.set_module"><code class="docutils literal notranslate"><span class="pre">GradientDescent.set_module()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.rp_optimizer.GradientDescent.update_parameters"><code class="docutils literal notranslate"><span class="pre">GradientDescent.update_parameters()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="model.html#model.rp_optimizer.Nadam"><code class="docutils literal notranslate"><span class="pre">Nadam</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.rp_optimizer.Nadam.set_module"><code class="docutils literal notranslate"><span class="pre">Nadam.set_module()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.rp_optimizer.Nadam.update_parameters"><code class="docutils literal notranslate"><span class="pre">Nadam.update_parameters()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="model.html#model.rp_optimizer.Optimizer"><code class="docutils literal notranslate"><span class="pre">Optimizer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.rp_optimizer.Optimizer.set_module"><code class="docutils literal notranslate"><span class="pre">Optimizer.set_module()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.rp_optimizer.Optimizer.update_parameters"><code class="docutils literal notranslate"><span class="pre">Optimizer.update_parameters()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="model.html#model.rp_optimizer.RMSprop"><code class="docutils literal notranslate"><span class="pre">RMSprop</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.rp_optimizer.RMSprop.set_module"><code class="docutils literal notranslate"><span class="pre">RMSprop.set_module()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.rp_optimizer.RMSprop.update_parameters"><code class="docutils literal notranslate"><span class="pre">RMSprop.update_parameters()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="model.html#model.rp_optimizer.SAMSGrad"><code class="docutils literal notranslate"><span class="pre">SAMSGrad</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.rp_optimizer.SAMSGrad.set_module"><code class="docutils literal notranslate"><span class="pre">SAMSGrad.set_module()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.rp_optimizer.SAMSGrad.update_parameters"><code class="docutils literal notranslate"><span class="pre">SAMSGrad.update_parameters()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="model.html#module-model.scffnn">model.scffnn module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="model.html#model.scffnn.SCFFNN"><code class="docutils literal notranslate"><span class="pre">SCFFNN</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.scffnn.SCFFNN.accuracy"><code class="docutils literal notranslate"><span class="pre">SCFFNN.accuracy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.scffnn.SCFFNN.add_layer"><code class="docutils literal notranslate"><span class="pre">SCFFNN.add_layer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.scffnn.SCFFNN.backprop"><code class="docutils literal notranslate"><span class="pre">SCFFNN.backprop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.scffnn.SCFFNN.convert_data"><code class="docutils literal notranslate"><span class="pre">SCFFNN.convert_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.scffnn.SCFFNN.denormalize_outputs"><code class="docutils literal notranslate"><span class="pre">SCFFNN.denormalize_outputs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.scffnn.SCFFNN.feedforward"><code class="docutils literal notranslate"><span class="pre">SCFFNN.feedforward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.scffnn.SCFFNN.fit"><code class="docutils literal notranslate"><span class="pre">SCFFNN.fit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.scffnn.SCFFNN.get_history"><code class="docutils literal notranslate"><span class="pre">SCFFNN.get_history()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.scffnn.SCFFNN.normalize_data"><code class="docutils literal notranslate"><span class="pre">SCFFNN.normalize_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.scffnn.SCFFNN.predict"><code class="docutils literal notranslate"><span class="pre">SCFFNN.predict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.scffnn.SCFFNN.update_learning_rate"><code class="docutils literal notranslate"><span class="pre">SCFFNN.update_learning_rate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.scffnn.SCFFNN.verify_input"><code class="docutils literal notranslate"><span class="pre">SCFFNN.verify_input()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="model.html#module-model">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="model.html#model.AMSGrad"><code class="docutils literal notranslate"><span class="pre">AMSGrad</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.AMSGrad.set_module"><code class="docutils literal notranslate"><span class="pre">AMSGrad.set_module()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.AMSGrad.update_parameters"><code class="docutils literal notranslate"><span class="pre">AMSGrad.update_parameters()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="model.html#model.Adam"><code class="docutils literal notranslate"><span class="pre">Adam</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.Adam.set_module"><code class="docutils literal notranslate"><span class="pre">Adam.set_module()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.Adam.update_parameters"><code class="docutils literal notranslate"><span class="pre">Adam.update_parameters()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="model.html#model.CVAMSGrad"><code class="docutils literal notranslate"><span class="pre">CVAMSGrad</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.CVAMSGrad.set_module"><code class="docutils literal notranslate"><span class="pre">CVAMSGrad.set_module()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.CVAMSGrad.update_parameters"><code class="docutils literal notranslate"><span class="pre">CVAMSGrad.update_parameters()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="model.html#model.CVAdam"><code class="docutils literal notranslate"><span class="pre">CVAdam</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.CVAdam.set_module"><code class="docutils literal notranslate"><span class="pre">CVAdam.set_module()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.CVAdam.update_parameters"><code class="docutils literal notranslate"><span class="pre">CVAdam.update_parameters()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="model.html#model.CVFFNN"><code class="docutils literal notranslate"><span class="pre">CVFFNN</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.CVFFNN.accuracy"><code class="docutils literal notranslate"><span class="pre">CVFFNN.accuracy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.CVFFNN.add_layer"><code class="docutils literal notranslate"><span class="pre">CVFFNN.add_layer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.CVFFNN.backprop"><code class="docutils literal notranslate"><span class="pre">CVFFNN.backprop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.CVFFNN.convert_data"><code class="docutils literal notranslate"><span class="pre">CVFFNN.convert_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.CVFFNN.denormalize_outputs"><code class="docutils literal notranslate"><span class="pre">CVFFNN.denormalize_outputs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.CVFFNN.feedforward"><code class="docutils literal notranslate"><span class="pre">CVFFNN.feedforward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.CVFFNN.fit"><code class="docutils literal notranslate"><span class="pre">CVFFNN.fit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.CVFFNN.get_history"><code class="docutils literal notranslate"><span class="pre">CVFFNN.get_history()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.CVFFNN.normalize_data"><code class="docutils literal notranslate"><span class="pre">CVFFNN.normalize_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.CVFFNN.predict"><code class="docutils literal notranslate"><span class="pre">CVFFNN.predict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.CVFFNN.update_learning_rate"><code class="docutils literal notranslate"><span class="pre">CVFFNN.update_learning_rate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.CVFFNN.verify_input"><code class="docutils literal notranslate"><span class="pre">CVFFNN.verify_input()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="model.html#model.CVNadam"><code class="docutils literal notranslate"><span class="pre">CVNadam</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.CVNadam.set_module"><code class="docutils literal notranslate"><span class="pre">CVNadam.set_module()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.CVNadam.update_parameters"><code class="docutils literal notranslate"><span class="pre">CVNadam.update_parameters()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="model.html#model.CVRBFNN"><code class="docutils literal notranslate"><span class="pre">CVRBFNN</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.CVRBFNN.accuracy"><code class="docutils literal notranslate"><span class="pre">CVRBFNN.accuracy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.CVRBFNN.add_layer"><code class="docutils literal notranslate"><span class="pre">CVRBFNN.add_layer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.CVRBFNN.backprop"><code class="docutils literal notranslate"><span class="pre">CVRBFNN.backprop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.CVRBFNN.convert_data"><code class="docutils literal notranslate"><span class="pre">CVRBFNN.convert_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.CVRBFNN.denormalize_outputs"><code class="docutils literal notranslate"><span class="pre">CVRBFNN.denormalize_outputs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.CVRBFNN.feedforward"><code class="docutils literal notranslate"><span class="pre">CVRBFNN.feedforward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.CVRBFNN.fit"><code class="docutils literal notranslate"><span class="pre">CVRBFNN.fit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.CVRBFNN.get_history"><code class="docutils literal notranslate"><span class="pre">CVRBFNN.get_history()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.CVRBFNN.normalize_data"><code class="docutils literal notranslate"><span class="pre">CVRBFNN.normalize_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.CVRBFNN.predict"><code class="docutils literal notranslate"><span class="pre">CVRBFNN.predict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.CVRBFNN.update_learning_rate"><code class="docutils literal notranslate"><span class="pre">CVRBFNN.update_learning_rate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.CVRBFNN.verify_input"><code class="docutils literal notranslate"><span class="pre">CVRBFNN.verify_input()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="model.html#model.FCRBFNN"><code class="docutils literal notranslate"><span class="pre">FCRBFNN</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.FCRBFNN.accuracy"><code class="docutils literal notranslate"><span class="pre">FCRBFNN.accuracy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.FCRBFNN.add_layer"><code class="docutils literal notranslate"><span class="pre">FCRBFNN.add_layer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.FCRBFNN.backprop"><code class="docutils literal notranslate"><span class="pre">FCRBFNN.backprop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.FCRBFNN.convert_data"><code class="docutils literal notranslate"><span class="pre">FCRBFNN.convert_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.FCRBFNN.denormalize_outputs"><code class="docutils literal notranslate"><span class="pre">FCRBFNN.denormalize_outputs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.FCRBFNN.feedforward"><code class="docutils literal notranslate"><span class="pre">FCRBFNN.feedforward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.FCRBFNN.fit"><code class="docutils literal notranslate"><span class="pre">FCRBFNN.fit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.FCRBFNN.get_history"><code class="docutils literal notranslate"><span class="pre">FCRBFNN.get_history()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.FCRBFNN.normalize_data"><code class="docutils literal notranslate"><span class="pre">FCRBFNN.normalize_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.FCRBFNN.predict"><code class="docutils literal notranslate"><span class="pre">FCRBFNN.predict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.FCRBFNN.update_learning_rate"><code class="docutils literal notranslate"><span class="pre">FCRBFNN.update_learning_rate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.FCRBFNN.verify_input"><code class="docutils literal notranslate"><span class="pre">FCRBFNN.verify_input()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="model.html#model.GradientDescent"><code class="docutils literal notranslate"><span class="pre">GradientDescent</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.GradientDescent.set_module"><code class="docutils literal notranslate"><span class="pre">GradientDescent.set_module()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.GradientDescent.update_parameters"><code class="docutils literal notranslate"><span class="pre">GradientDescent.update_parameters()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="model.html#model.Layer"><code class="docutils literal notranslate"><span class="pre">Layer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="model.html#model.Nadam"><code class="docutils literal notranslate"><span class="pre">Nadam</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.Nadam.set_module"><code class="docutils literal notranslate"><span class="pre">Nadam.set_module()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.Nadam.update_parameters"><code class="docutils literal notranslate"><span class="pre">Nadam.update_parameters()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="model.html#model.NeuralNetwork"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.NeuralNetwork.accuracy"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork.accuracy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.NeuralNetwork.add_layer"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork.add_layer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.NeuralNetwork.convert_data"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork.convert_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.NeuralNetwork.denormalize_outputs"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork.denormalize_outputs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.NeuralNetwork.fit"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork.fit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.NeuralNetwork.get_history"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork.get_history()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.NeuralNetwork.normalize_data"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork.normalize_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.NeuralNetwork.predict"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork.predict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.NeuralNetwork.update_learning_rate"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork.update_learning_rate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.NeuralNetwork.verify_input"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork.verify_input()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="model.html#model.Optimizer"><code class="docutils literal notranslate"><span class="pre">Optimizer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.Optimizer.set_module"><code class="docutils literal notranslate"><span class="pre">Optimizer.set_module()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.Optimizer.update_parameters"><code class="docutils literal notranslate"><span class="pre">Optimizer.update_parameters()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="model.html#model.SCFFNN"><code class="docutils literal notranslate"><span class="pre">SCFFNN</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.SCFFNN.accuracy"><code class="docutils literal notranslate"><span class="pre">SCFFNN.accuracy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.SCFFNN.add_layer"><code class="docutils literal notranslate"><span class="pre">SCFFNN.add_layer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.SCFFNN.backprop"><code class="docutils literal notranslate"><span class="pre">SCFFNN.backprop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.SCFFNN.convert_data"><code class="docutils literal notranslate"><span class="pre">SCFFNN.convert_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.SCFFNN.denormalize_outputs"><code class="docutils literal notranslate"><span class="pre">SCFFNN.denormalize_outputs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.SCFFNN.feedforward"><code class="docutils literal notranslate"><span class="pre">SCFFNN.feedforward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.SCFFNN.fit"><code class="docutils literal notranslate"><span class="pre">SCFFNN.fit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.SCFFNN.get_history"><code class="docutils literal notranslate"><span class="pre">SCFFNN.get_history()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.SCFFNN.normalize_data"><code class="docutils literal notranslate"><span class="pre">SCFFNN.normalize_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.SCFFNN.predict"><code class="docutils literal notranslate"><span class="pre">SCFFNN.predict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.SCFFNN.update_learning_rate"><code class="docutils literal notranslate"><span class="pre">SCFFNN.update_learning_rate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#model.SCFFNN.verify_input"><code class="docutils literal notranslate"><span class="pre">SCFFNN.verify_input()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html">utils package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="utils.act_func.html">utils.act_func module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="utils.act_func.html#utils.act_func.acos"><code class="docutils literal notranslate"><span class="pre">acos()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.act_func.html#utils.act_func.asin"><code class="docutils literal notranslate"><span class="pre">asin()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.act_func.html#utils.act_func.asinh"><code class="docutils literal notranslate"><span class="pre">asinh()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.act_func.html#utils.act_func.atan"><code class="docutils literal notranslate"><span class="pre">atan()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.act_func.html#utils.act_func.atanh"><code class="docutils literal notranslate"><span class="pre">atanh()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.act_func.html#utils.act_func.linear"><code class="docutils literal notranslate"><span class="pre">linear()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.act_func.html#utils.act_func.sech"><code class="docutils literal notranslate"><span class="pre">sech()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.act_func.html#utils.act_func.sin"><code class="docutils literal notranslate"><span class="pre">sin()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.act_func.html#utils.act_func.sinh"><code class="docutils literal notranslate"><span class="pre">sinh()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.act_func.html#utils.act_func.split_complex"><code class="docutils literal notranslate"><span class="pre">split_complex()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.act_func.html#utils.act_func.tan"><code class="docutils literal notranslate"><span class="pre">tan()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.act_func.html#utils.act_func.tanh"><code class="docutils literal notranslate"><span class="pre">tanh()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="utils.batch_gen_func.html">utils.batch_gen_func module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="utils.batch_gen_func.html#utils.batch_gen_func.batch_sequential"><code class="docutils literal notranslate"><span class="pre">batch_sequential()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.batch_gen_func.html#utils.batch_gen_func.batch_shuffle"><code class="docutils literal notranslate"><span class="pre">batch_shuffle()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="utils.cost_func.html">utils.cost_func module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="utils.cost_func.html#utils.cost_func.mse"><code class="docutils literal notranslate"><span class="pre">mse()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="utils.decay_func.html">utils.decay_func module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="utils.decay_func.html#utils.decay_func.exponential_decay"><code class="docutils literal notranslate"><span class="pre">exponential_decay()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.decay_func.html#utils.decay_func.none_decay"><code class="docutils literal notranslate"><span class="pre">none_decay()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.decay_func.html#utils.decay_func.staircase"><code class="docutils literal notranslate"><span class="pre">staircase()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.decay_func.html#utils.decay_func.time_based_decay"><code class="docutils literal notranslate"><span class="pre">time_based_decay()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="utils.init_func.html">utils.init_func module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="utils.init_func.html#utils.init_func.glorot_normal"><code class="docutils literal notranslate"><span class="pre">glorot_normal()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.init_func.html#utils.init_func.glorot_uniform"><code class="docutils literal notranslate"><span class="pre">glorot_uniform()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.init_func.html#utils.init_func.ones"><code class="docutils literal notranslate"><span class="pre">ones()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.init_func.html#utils.init_func.ones_real"><code class="docutils literal notranslate"><span class="pre">ones_real()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.init_func.html#utils.init_func.opt_conv_ptrbf_weights"><code class="docutils literal notranslate"><span class="pre">opt_conv_ptrbf_weights()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.init_func.html#utils.init_func.opt_crbf_gamma"><code class="docutils literal notranslate"><span class="pre">opt_crbf_gamma()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.init_func.html#utils.init_func.opt_crbf_weights"><code class="docutils literal notranslate"><span class="pre">opt_crbf_weights()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.init_func.html#utils.init_func.opt_ptrbf_gamma"><code class="docutils literal notranslate"><span class="pre">opt_ptrbf_gamma()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.init_func.html#utils.init_func.opt_ptrbf_weights"><code class="docutils literal notranslate"><span class="pre">opt_ptrbf_weights()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.init_func.html#utils.init_func.random_normal"><code class="docutils literal notranslate"><span class="pre">random_normal()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.init_func.html#utils.init_func.random_uniform"><code class="docutils literal notranslate"><span class="pre">random_uniform()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.init_func.html#utils.init_func.rbf_default"><code class="docutils literal notranslate"><span class="pre">rbf_default()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.init_func.html#utils.init_func.ru_gamma_ptrbf"><code class="docutils literal notranslate"><span class="pre">ru_gamma_ptrbf()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.init_func.html#utils.init_func.ru_weights_ptrbf"><code class="docutils literal notranslate"><span class="pre">ru_weights_ptrbf()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.init_func.html#utils.init_func.zeros"><code class="docutils literal notranslate"><span class="pre">zeros()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.init_func.html#utils.init_func.zeros_real"><code class="docutils literal notranslate"><span class="pre">zeros_real()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="utils.plot.html">utils.plot module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="utils.plot.html#utils.plot.classification_predictions"><code class="docutils literal notranslate"><span class="pre">classification_predictions()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.plot.html#utils.plot.dsa"><code class="docutils literal notranslate"><span class="pre">dsa()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.plot.html#utils.plot.make_spiral"><code class="docutils literal notranslate"><span class="pre">make_spiral()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="utils.reg_func.html">utils.reg_func module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="utils.reg_func.html#utils.reg_func.l2_regularization"><code class="docutils literal notranslate"><span class="pre">l2_regularization()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="utils.select_module.html">utils.select_module module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="utils.select_module.html#utils.select_module.select_module"><code class="docutils literal notranslate"><span class="pre">select_module()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="utils.utils.html">utils.utils module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="utils.utils.html#utils.utils.split_set"><code class="docutils literal notranslate"><span class="pre">split_set()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#module-utils">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Ariadne A. Cruz, Kayol S. Mayer, Dalton S. Arantes.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>model.ptrbfnnc module &mdash; RosenPy 2.1 documentation</title>
+      <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="static/ico_rosenpy.ico"/>
+  <!--[if lt IE 9]>
+    <script src="static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="static/jquery.js"></script>
+        <script src="static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="static/documentation_options.js"></script>
+        <script src="static/doctools.js"></script>
+        <script src="static/sphinx_highlight.js"></script>
+    <script src="static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="rosenpy.utils package" href="rosenpy.utils.html" />
+    <link rel="prev" title="model.fcrbfnn module" href="model.fcrbfnn.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="static/logo_rosenpy.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome to RosenPy’s documentation!</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="rosenpy.html">rosenpy package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="rosenpy.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="rosenpy.model.html">rosenpy.model package</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="model.cvffnn.html">model.cvffnn module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.scffnn.html">model.scffnn module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.cvrbfnn.html">model.cvrbfnn module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.fcrbfnn.html">model.fcrbfnn module</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">model.ptrbfnnc module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="rosenpy.utils.html">rosenpy.utils package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="rosenpy.html#module-rosenpy">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RosenPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="rosenpy.html">rosenpy package</a></li>
+          <li class="breadcrumb-item"><a href="rosenpy.model.html">rosenpy.model package</a></li>
+      <li class="breadcrumb-item active">model.ptrbfnnc module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="sources/model.ptrbfnnc.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-model.ptrbfnnc">
+<span id="model-ptrbfnnc-module"></span><h1>model.ptrbfnnc module<a class="headerlink" href="#module-model.ptrbfnnc" title="Permalink to this heading"></a></h1>
+<p><strong>RosenPy: An Open Source Python Framework for Complex-Valued Neural Networks</strong>.
+<em>Copyright © A. A. Cruz, K. S. Mayer, D. S. Arantes</em>.</p>
+<p><em>License</em></p>
+<p>This file is part of RosenPy.
+RosenPy is an open source framework distributed under the terms of the GNU General
+Public License, as published by the Free Software Foundation, either version 3 of
+the License, or (at your option) any later version. For additional information on
+license terms, please open the Readme.md file.</p>
+<p>RosenPy is distributed in the hope that it will be useful to every user, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+See the GNU General Public License for more details.</p>
+<p>You should have received a copy of the GNU General Public License
+along with RosenPy. If not, see &lt;<a class="reference external" href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>&gt;.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="model.ptrbfnnc.PTRBFNN">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">model.ptrbfnnc.</span></span><span class="sig-name descname"><span class="pre">PTRBFNN</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cost_func=&lt;function</span> <span class="pre">mse&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">patience=inf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gpu_enable=False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="modules/model/ptrbfnnc.html#PTRBFNN"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#model.ptrbfnnc.PTRBFNN" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="model.rp_nn.html#model.rp_nn.NeuralNetwork" title="model.rp_nn.NeuralNetwork"><code class="xref py py-class docutils literal notranslate"><span class="pre">NeuralNetwork</span></code></a></p>
+<p>Specification for the Deep Phase Transmittance Radial Basis Function Neural Network
+to be passed to the model in construction.
+This includes the feedforward, backpropagation, and adding layer methods specifics.</p>
+<p>This class derives from NeuralNetwork class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="model.ptrbfnnc.PTRBFNN.accuracy">
+<span class="sig-name descname"><span class="pre">accuracy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_pred</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model.ptrbfnnc.PTRBFNN.accuracy" title="Permalink to this definition"></a></dt>
+<dd><p>Computes the accuracy of the predictions.</p>
+<section id="parameters">
+<h2>Parameters:<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>y<span class="classifier">array-like</span></dt><dd><p>The true labels or target values.</p>
+</dd>
+<dt>y_pred<span class="classifier">array-like</span></dt><dd><p>The predicted values.</p>
+</dd>
+</dl>
+</section>
+<section id="returns">
+<h2>Returns:<a class="headerlink" href="#returns" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>float</dt><dd><p>The accuracy of the predictions as a percentage.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="model.ptrbfnnc.PTRBFNN.add_layer">
+<span class="sig-name descname"><span class="pre">add_layer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">neurons</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ishape=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">oshape=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights_initializer=&lt;function</span> <span class="pre">opt_ptrbf_weights&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bias_initializer=&lt;function</span> <span class="pre">zeros&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma_initializer=&lt;function</span> <span class="pre">ones&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma_initializer=&lt;function</span> <span class="pre">opt_ptrbf_gamma&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reg_strength=0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda_init=0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights_rate=0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">biases_rate=0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma_rate=0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma_rate=0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lr_decay_method=&lt;function</span> <span class="pre">none_decay&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lr_decay_rate=0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lr_decay_steps=1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_initializer=&lt;function</span> <span class="pre">opt_ptrbf_gamma&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_size=3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">category=1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layer_type='Fully'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="modules/model/ptrbfnnc.html#PTRBFNN.add_layer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#model.ptrbfnnc.PTRBFNN.add_layer" title="Permalink to this definition"></a></dt>
+<dd><p>Adds a layer to the neural network.</p>
+<p>This method is responsible for appending a new layer to the neural network structure.
+The layer can be fully connected or convolutional, depending on the parameters provided.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>neurons</strong> (<em>int</em>) – The number of neurons in the hidden layer. If <cite>ishape</cite> is different from zero
+and this is the first layer of the model, <cite>neurons</cite> represents the number of
+neurons in the first layer (i.e., the number of input features).</p></li>
+<li><p><strong>ishape</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of neurons in the first layer (i.e., the number of input features). Default is 0.</p></li>
+<li><p><strong>oshape</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of output neurons (shape of the output). If not provided, defaults to the number of neurons. Default is 0.</p></li>
+<li><p><strong>weights_initializer</strong> (<em>function</em><em>, </em><em>optional</em>) – The function used to initialize the layer’s weights. Default is <cite>init_func.opt_ptrbf_weights</cite>.</p></li>
+<li><p><strong>bias_initializer</strong> (<em>function</em><em>, </em><em>optional</em>) – The function used to initialize the layer’s biases. Default is <cite>init_func.zeros</cite>.</p></li>
+<li><p><strong>sigma_initializer</strong> (<em>function</em><em>, </em><em>optional</em>) – The function used to initialize the <cite>sigma</cite> parameter. Default is <cite>init_func.ones</cite>.</p></li>
+<li><p><strong>gamma_initializer</strong> (<em>function</em><em>, </em><em>optional</em>) – The function used to initialize the <cite>gamma</cite> parameter. Default is <cite>init_func.opt_ptrbf_gamma</cite>.</p></li>
+<li><p><strong>reg_strength</strong> (<em>float</em><em>, </em><em>optional</em>) – The strength of L2 regularization applied to the layer. Default is 0.0 (no regularization).</p></li>
+<li><p><strong>lambda_init</strong> (<em>float</em><em>, </em><em>optional</em>) – The initial value for the regularization term. Default is 0.1.</p></li>
+<li><p><strong>weights_rate</strong> (<em>float</em><em>, </em><em>optional</em>) – The learning rate applied to the weights during training. Default is 0.001.</p></li>
+<li><p><strong>biases_rate</strong> (<em>float</em><em>, </em><em>optional</em>) – The learning rate applied to the biases during training. Default is 0.001.</p></li>
+<li><p><strong>gamma_rate</strong> (<em>float</em><em>, </em><em>optional</em>) – The learning rate applied to the <cite>gamma</cite> parameter during training. Default is 0.01.</p></li>
+<li><p><strong>sigma_rate</strong> (<em>float</em><em>, </em><em>optional</em>) – The learning rate applied to the <cite>sigma</cite> parameter during training. Default is 0.01.</p></li>
+<li><p><strong>lr_decay_method</strong> (<em>function</em><em>, </em><em>optional</em>) – The method used for decaying the learning rate over time. Default is <cite>decay_func.none_decay</cite>.</p></li>
+<li><p><strong>lr_decay_rate</strong> (<em>float</em><em>, </em><em>optional</em>) – The rate at which the learning rate decays. Default is 0.0 (no decay).</p></li>
+<li><p><strong>lr_decay_steps</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of steps after which the learning rate decays. Default is 1.</p></li>
+<li><p><strong>kernel_initializer</strong> (<em>function</em><em>, </em><em>optional</em>) – The function used to initialize the kernel for convolutional layers. Default is <cite>init_func.opt_ptrbf_gamma</cite>.</p></li>
+<li><p><strong>kernel_size</strong> (<em>int</em><em>, </em><em>optional</em>) – The size of the convolutional kernel. Default is 3.</p></li>
+<li><p><strong>module</strong> (<em>object</em><em>, </em><em>optional</em>) – The computation module used (e.g., NumPy or CuPy). If not provided, it is set during the initialization of the <cite>NeuralNetwork</cite> class. Default is None.</p></li>
+<li><p><strong>category</strong> (<em>int</em><em>, </em><em>optional</em>) – The type of convolution: 1 for transient and steady-state, 0 for steady-state only. Default is 1.</p></li>
+<li><p><strong>layer_type</strong> (<em>str</em><em>, </em><em>optional</em>) – The type of layer to add: “Fully” for fully connected layers, “Conv” for convolutional layers. Default is “Fully”.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>This method does not return any value; it modifies the network structure by appending a new layer.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The layer is added to the <cite>self.layers</cite> list, which is a sequence of layers in the neural network.
+The parameters provided, such as initialization methods and learning rates, are specific to each layer.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="model.ptrbfnnc.PTRBFNN.backprop">
+<span class="sig-name descname"><span class="pre">backprop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_pred</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="modules/model/ptrbfnnc.html#PTRBFNN.backprop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#model.ptrbfnnc.PTRBFNN.backprop" title="Permalink to this definition"></a></dt>
+<dd><p>Performs the backpropagation operation on the neural network.</p>
+<section id="id1">
+<h2>Parameters:<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>y<span class="classifier">array-like</span></dt><dd><p>The true labels or target values.</p>
+</dd>
+<dt>y_pred<span class="classifier">array-like</span></dt><dd><p>The predicted values from the neural network.</p>
+</dd>
+<dt>epoch<span class="classifier">int</span></dt><dd><p>The current epoch number.</p>
+</dd>
+</dl>
+</section>
+<section id="id2">
+<h2>Returns:<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>array-like</dt><dd><p>The gradients of the loss function with respect to the network parameters.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="model.ptrbfnnc.PTRBFNN.convert_data">
+<span class="sig-name descname"><span class="pre">convert_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model.ptrbfnnc.PTRBFNN.convert_data" title="Permalink to this definition"></a></dt>
+<dd><p>Converts the input data to the appropriate format for the current backend
+(NUMPY or CUPY).</p>
+<section id="id3">
+<h2>Parameters:<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>data<span class="classifier">array-like</span></dt><dd><p>The input data.</p>
+</dd>
+</dl>
+</section>
+<section id="id4">
+<h2>Returns:<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>array-like</dt><dd><p>The converted input data.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="model.ptrbfnnc.PTRBFNN.denormalize_outputs">
+<span class="sig-name descname"><span class="pre">denormalize_outputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">normalized_output_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mean</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">std_dev</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="modules/model/ptrbfnnc.html#PTRBFNN.denormalize_outputs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#model.ptrbfnnc.PTRBFNN.denormalize_outputs" title="Permalink to this definition"></a></dt>
+<dd><p>Denormalize the output data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>normalized_output_data</strong> (<em>cupy/numpy.ndarray</em>) – Normalized output data to be denormalized.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Denormalized output data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>cupy/numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="model.ptrbfnnc.PTRBFNN.feedforward">
+<span class="sig-name descname"><span class="pre">feedforward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="modules/model/ptrbfnnc.html#PTRBFNN.feedforward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#model.ptrbfnnc.PTRBFNN.feedforward" title="Permalink to this definition"></a></dt>
+<dd><p>Performs the feedforward operation on the neural network.</p>
+<section id="id5">
+<h2>Parameters:<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>x<span class="classifier">array-like</span></dt><dd><p>The input data to be fed into the neural network.</p>
+</dd>
+</dl>
+</section>
+<section id="id6">
+<h2>Returns:<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>array-like</dt><dd><p>The output of the neural network after the feedforward operation.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="model.ptrbfnnc.PTRBFNN.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_train</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_train</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_val=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_val=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs=100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose=10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_gen=&lt;function</span> <span class="pre">batch_sequential&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size=1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optimizer=&lt;model.rp_optimizer.GradientDescent</span> <span class="pre">object&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model.ptrbfnnc.PTRBFNN.fit" title="Permalink to this definition"></a></dt>
+<dd><p>Trains the neural network on the provided training data.</p>
+<section id="id7">
+<h2>Parameters:<a class="headerlink" href="#id7" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>x_train<span class="classifier">array-like</span></dt><dd><p>The input training data.</p>
+</dd>
+<dt>y_train<span class="classifier">array-like</span></dt><dd><p>The target training data.</p>
+</dd>
+<dt>x_val<span class="classifier">array-like, optional</span></dt><dd><p>The input validation data. Default is None.</p>
+</dd>
+<dt>y_val<span class="classifier">array-like, optional</span></dt><dd><p>The target validation data. Default is None.</p>
+</dd>
+<dt>epochs<span class="classifier">int, optional</span></dt><dd><p>The number of training epochs. Default is 100.</p>
+</dd>
+<dt>verbose<span class="classifier">int, optional</span></dt><dd><p>Controls the verbosity of the training process. Default is 10.</p>
+</dd>
+<dt>batch_gen<span class="classifier">function, optional</span></dt><dd><p>The batch generation function to use during training. Default is
+batch_gen_func.batch_sequential.</p>
+</dd>
+<dt>batch_size<span class="classifier">int, optional</span></dt><dd><p>The batch size to use during training. Default is 1.</p>
+</dd>
+<dt>optimizer<span class="classifier">Optimizer, optional</span></dt><dd><p>The optimizer to use during training. Default is GradientDescent
+with specified parameters.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="model.ptrbfnnc.PTRBFNN.get_history">
+<span class="sig-name descname"><span class="pre">get_history</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#model.ptrbfnnc.PTRBFNN.get_history" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the training history of the neural network.</p>
+<section id="id8">
+<h2>Returns:<a class="headerlink" href="#id8" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>dict</dt><dd><p>A dictionary containing the training history.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="model.ptrbfnnc.PTRBFNN.normalize_data">
+<span class="sig-name descname"><span class="pre">normalize_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mean</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">std_dev</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="modules/model/ptrbfnnc.html#PTRBFNN.normalize_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#model.ptrbfnnc.PTRBFNN.normalize_data" title="Permalink to this definition"></a></dt>
+<dd><p>Normalize the input data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>input_data</strong> (<em>cupy/numpy.ndarray</em>) – Input data to be normalized.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Normalized input data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>cupy/numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="model.ptrbfnnc.PTRBFNN.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model.ptrbfnnc.PTRBFNN.predict" title="Permalink to this definition"></a></dt>
+<dd><p>Predicts the output for the given input data.</p>
+<section id="id9">
+<h2>Parameters:<a class="headerlink" href="#id9" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>x<span class="classifier">array-like</span></dt><dd><p>The input data for prediction.</p>
+</dd>
+</dl>
+</section>
+<section id="id10">
+<h2>Returns:<a class="headerlink" href="#id10" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>array-like</dt><dd><p>The predicted output for the input data.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="model.ptrbfnnc.PTRBFNN.update_learning_rate">
+<span class="sig-name descname"><span class="pre">update_learning_rate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model.ptrbfnnc.PTRBFNN.update_learning_rate" title="Permalink to this definition"></a></dt>
+<dd><p>Updates the learning rates of all layers based on the current epoch.</p>
+<section id="id11">
+<h2>Parameters:<a class="headerlink" href="#id11" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>epoch<span class="classifier">int</span></dt><dd><p>The current epoch number.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="model.ptrbfnnc.PTRBFNN.verify_input">
+<span class="sig-name descname"><span class="pre">verify_input</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model.ptrbfnnc.PTRBFNN.verify_input" title="Permalink to this definition"></a></dt>
+<dd><p>Verifies the input data type for optimal performance of the RosenPY
+framework.</p>
+<section id="id12">
+<h2>Parameters:<a class="headerlink" href="#id12" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>data<span class="classifier">array-like</span></dt><dd><p>The input data.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="model.fcrbfnn.html" class="btn btn-neutral float-left" title="model.fcrbfnn module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="rosenpy.utils.html" class="btn btn-neutral float-right" title="rosenpy.utils package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Ariadne A. Cruz, Kayol S. Mayer, Dalton S. Arantes.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

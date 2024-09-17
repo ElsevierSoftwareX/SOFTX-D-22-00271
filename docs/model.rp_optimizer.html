@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>model.rp_optimizer module &mdash; RosenPy 2.1 documentation</title>
+      <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="static/ico_rosenpy.ico"/>
+  <!--[if lt IE 9]>
+    <script src="static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="static/jquery.js"></script>
+        <script src="static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="static/documentation_options.js"></script>
+        <script src="static/doctools.js"></script>
+        <script src="static/sphinx_highlight.js"></script>
+    <script src="static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="static/logo_rosenpy.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome to RosenPy’s documentation!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rosenpy.html">rosenpy package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RosenPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">model.rp_optimizer module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="sources/model.rp_optimizer.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-model.rp_optimizer">
+<span id="model-rp-optimizer-module"></span><h1>model.rp_optimizer module<a class="headerlink" href="#module-model.rp_optimizer" title="Permalink to this heading"></a></h1>
+<p><strong>RosenPy: An Open Source Python Framework for Complex-Valued Neural Networks</strong>.
+<em>Copyright © A. A. Cruz, K. S. Mayer, D. S. Arantes</em>.</p>
+<p><em>License</em></p>
+<p>This file is part of RosenPy.
+RosenPy is an open source framework distributed under the terms of the GNU General
+Public License, as published by the Free Software Foundation, either version 3 of
+the License, or (at your option) any later version. For additional information on
+license terms, please open the Readme.md file.</p>
+<p>RosenPy is distributed in the hope that it will be useful to every user, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+See the GNU General Public License for more details.</p>
+<p>You should have received a copy of the GNU General Public License
+along with RosenPy. If not, see &lt;<a class="reference external" href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>&gt;.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="model.rp_optimizer.AMSGrad">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">model.rp_optimizer.</span></span><span class="sig-name descname"><span class="pre">AMSGrad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.999</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-08</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="modules/model/rp_optimizer.html#AMSGrad"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#model.rp_optimizer.AMSGrad" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#model.rp_optimizer.Optimizer" title="model.rp_optimizer.Optimizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Optimizer</span></code></a></p>
+<p>AMSGrad optimizer.</p>
+<p>This class implements the AMSGrad optimization algorithm, a variant of Adam that
+improves convergence in certain cases by keeping track of the maximum past squared gradient.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="model.rp_optimizer.AMSGrad.set_module">
+<span class="sig-name descname"><span class="pre">set_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model.rp_optimizer.AMSGrad.set_module" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the backend module (NumPy or CuPy) for matrix operations.</p>
+<section id="parameters">
+<h2>Parameters:<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>xp<span class="classifier">module</span></dt><dd><p>The backend module (NumPy or CuPy).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="model.rp_optimizer.AMSGrad.update_parameters">
+<span class="sig-name descname"><span class="pre">update_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gradients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ut</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="modules/model/rp_optimizer.html#AMSGrad.update_parameters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#model.rp_optimizer.AMSGrad.update_parameters" title="Permalink to this definition"></a></dt>
+<dd><p>Updates the parameters using the AMSGrad optimizer.</p>
+<section id="id1">
+<h2>Parameters:<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
+<p>Same as the parent class.</p>
+</section>
+<section id="returns">
+<h2>Returns:<a class="headerlink" href="#returns" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>tuple</dt><dd><p>The updated parameters along with the updated moment estimates.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="model.rp_optimizer.AdaGrad">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">model.rp_optimizer.</span></span><span class="sig-name descname"><span class="pre">AdaGrad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.999</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-08</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="modules/model/rp_optimizer.html#AdaGrad"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#model.rp_optimizer.AdaGrad" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#model.rp_optimizer.Optimizer" title="model.rp_optimizer.Optimizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Optimizer</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="model.rp_optimizer.AdaGrad.set_module">
+<span class="sig-name descname"><span class="pre">set_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model.rp_optimizer.AdaGrad.set_module" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the backend module (NumPy or CuPy) for matrix operations.</p>
+<section id="id2">
+<h2>Parameters:<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>xp<span class="classifier">module</span></dt><dd><p>The backend module (NumPy or CuPy).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="model.rp_optimizer.AdaGrad.update_parameters">
+<span class="sig-name descname"><span class="pre">update_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gradients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ut</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="modules/model/rp_optimizer.html#AdaGrad.update_parameters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#model.rp_optimizer.AdaGrad.update_parameters" title="Permalink to this definition"></a></dt>
+<dd><p>Updates the parameters using the AdaGrad optimizer.</p>
+<section id="id3">
+<h2>Parameters:<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
+<p>Same as the parent class.</p>
+</section>
+<section id="id4">
+<h2>Returns:<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>tuple</dt><dd><p>The updated parameters along with the updated moment estimates.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="model.rp_optimizer.Adam">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">model.rp_optimizer.</span></span><span class="sig-name descname"><span class="pre">Adam</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.999</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-08</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="modules/model/rp_optimizer.html#Adam"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#model.rp_optimizer.Adam" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#model.rp_optimizer.Optimizer" title="model.rp_optimizer.Optimizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Optimizer</span></code></a></p>
+<p>Adam optimizer.</p>
+<p>This class implements the Adam optimization algorithm, which is an adaptive
+learning rate optimization algorithm.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="model.rp_optimizer.Adam.set_module">
+<span class="sig-name descname"><span class="pre">set_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model.rp_optimizer.Adam.set_module" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the backend module (NumPy or CuPy) for matrix operations.</p>
+<section id="id5">
+<h2>Parameters:<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>xp<span class="classifier">module</span></dt><dd><p>The backend module (NumPy or CuPy).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="model.rp_optimizer.Adam.update_parameters">
+<span class="sig-name descname"><span class="pre">update_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gradients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ut</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="modules/model/rp_optimizer.html#Adam.update_parameters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#model.rp_optimizer.Adam.update_parameters" title="Permalink to this definition"></a></dt>
+<dd><p>Updates the parameters using the Adam optimizer.</p>
+<section id="id6">
+<h2>Parameters:<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h2>
+<p>Same as the parent class.</p>
+</section>
+<section id="id7">
+<h2>Returns:<a class="headerlink" href="#id7" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>tuple</dt><dd><p>The updated parameters along with the updated moment estimates.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="model.rp_optimizer.Adamax">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">model.rp_optimizer.</span></span><span class="sig-name descname"><span class="pre">Adamax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.999</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-08</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="modules/model/rp_optimizer.html#Adamax"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#model.rp_optimizer.Adamax" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#model.rp_optimizer.Optimizer" title="model.rp_optimizer.Optimizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Optimizer</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="model.rp_optimizer.Adamax.set_module">
+<span class="sig-name descname"><span class="pre">set_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model.rp_optimizer.Adamax.set_module" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the backend module (NumPy or CuPy) for matrix operations.</p>
+<section id="id8">
+<h2>Parameters:<a class="headerlink" href="#id8" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>xp<span class="classifier">module</span></dt><dd><p>The backend module (NumPy or CuPy).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="model.rp_optimizer.Adamax.update_parameters">
+<span class="sig-name descname"><span class="pre">update_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gradients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ut</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="modules/model/rp_optimizer.html#Adamax.update_parameters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#model.rp_optimizer.Adamax.update_parameters" title="Permalink to this definition"></a></dt>
+<dd><p>Updates the parameters using the Adamax optimizer.</p>
+<section id="id9">
+<h2>Parameters:<a class="headerlink" href="#id9" title="Permalink to this heading"></a></h2>
+<p>Same as the parent class.</p>
+</section>
+<section id="id10">
+<h2>Returns:<a class="headerlink" href="#id10" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>tuple</dt><dd><p>The updated parameters along with the updated moment estimates.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="model.rp_optimizer.CVAMSGrad">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">model.rp_optimizer.</span></span><span class="sig-name descname"><span class="pre">CVAMSGrad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.999</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-08</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="modules/model/rp_optimizer.html#CVAMSGrad"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#model.rp_optimizer.CVAMSGrad" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#model.rp_optimizer.Optimizer" title="model.rp_optimizer.Optimizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Optimizer</span></code></a></p>
+<p>Updates the parameters using the complex-valued SAMSGrad optimizer.</p>
+<section id="id11">
+<h2>Parameters:<a class="headerlink" href="#id11" title="Permalink to this heading"></a></h2>
+<p>Same as the parent class.</p>
+</section>
+<section id="id12">
+<h2>Returns:<a class="headerlink" href="#id12" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>tuple</dt><dd><p>The updated parameters along with the updated moment estimates.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="model.rp_optimizer.CVAMSGrad.set_module">
+<span class="sig-name descname"><span class="pre">set_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model.rp_optimizer.CVAMSGrad.set_module" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the backend module (NumPy or CuPy) for matrix operations.</p>
+<section id="id13">
+<h3>Parameters:<a class="headerlink" href="#id13" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>xp<span class="classifier">module</span></dt><dd><p>The backend module (NumPy or CuPy).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="model.rp_optimizer.CVAMSGrad.update_parameters">
+<span class="sig-name descname"><span class="pre">update_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gradients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ut</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="modules/model/rp_optimizer.html#CVAMSGrad.update_parameters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#model.rp_optimizer.CVAMSGrad.update_parameters" title="Permalink to this definition"></a></dt>
+<dd><p>Updates the parameters of the neural network based on the gradients.</p>
+<p>This is a placeholder method that should be implemented by subclasses.</p>
+<section id="id14">
+<h3>Parameters:<a class="headerlink" href="#id14" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>parameters<span class="classifier">tuple</span></dt><dd><p>The parameters of the neural network.</p>
+</dd>
+<dt>gradients<span class="classifier">tuple</span></dt><dd><p>The gradients of the loss function with respect to the parameters.</p>
+</dd>
+<dt>learning_rate<span class="classifier">tuple</span></dt><dd><p>The learning rates for updating the parameters.</p>
+</dd>
+<dt>epoch<span class="classifier">int</span></dt><dd><p>The current epoch number.</p>
+</dd>
+<dt>mt<span class="classifier">tuple</span></dt><dd><p>The first moment estimates.</p>
+</dd>
+<dt>vt<span class="classifier">tuple</span></dt><dd><p>The second moment estimates.</p>
+</dd>
+<dt>ut<span class="classifier">tuple</span></dt><dd><p>The third moment estimates.</p>
+</dd>
+</dl>
+</section>
+<section id="id15">
+<h3>Returns:<a class="headerlink" href="#id15" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>tuple</dt><dd><p>The updated parameters along with the updated moment estimates.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</section>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="model.rp_optimizer.CVAdaGrad">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">model.rp_optimizer.</span></span><span class="sig-name descname"><span class="pre">CVAdaGrad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.999</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-08</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="modules/model/rp_optimizer.html#CVAdaGrad"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#model.rp_optimizer.CVAdaGrad" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#model.rp_optimizer.Optimizer" title="model.rp_optimizer.Optimizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Optimizer</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="model.rp_optimizer.CVAdaGrad.set_module">
+<span class="sig-name descname"><span class="pre">set_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model.rp_optimizer.CVAdaGrad.set_module" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the backend module (NumPy or CuPy) for matrix operations.</p>
+<section id="id16">
+<h2>Parameters:<a class="headerlink" href="#id16" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>xp<span class="classifier">module</span></dt><dd><p>The backend module (NumPy or CuPy).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="model.rp_optimizer.CVAdaGrad.update_parameters">
+<span class="sig-name descname"><span class="pre">update_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gradients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ut</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="modules/model/rp_optimizer.html#CVAdaGrad.update_parameters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#model.rp_optimizer.CVAdaGrad.update_parameters" title="Permalink to this definition"></a></dt>
+<dd><p>Updates the parameters using the complex-valued AdaGrad optimizer.</p>
+<section id="id17">
+<h2>Parameters:<a class="headerlink" href="#id17" title="Permalink to this heading"></a></h2>
+<p>Same as the parent class.</p>
+</section>
+<section id="id18">
+<h2>Returns:<a class="headerlink" href="#id18" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>tuple</dt><dd><p>The updated parameters along with the updated moment estimates.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="model.rp_optimizer.CVAdam">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">model.rp_optimizer.</span></span><span class="sig-name descname"><span class="pre">CVAdam</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.999</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-08</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="modules/model/rp_optimizer.html#CVAdam"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#model.rp_optimizer.CVAdam" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#model.rp_optimizer.Optimizer" title="model.rp_optimizer.Optimizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Optimizer</span></code></a></p>
+<p>Complex-Valued Adam optimizer.</p>
+<p>This class implements the complex-valued version of the Adam optimization algorithm.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="model.rp_optimizer.CVAdam.set_module">
+<span class="sig-name descname"><span class="pre">set_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model.rp_optimizer.CVAdam.set_module" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the backend module (NumPy or CuPy) for matrix operations.</p>
+<section id="id19">
+<h2>Parameters:<a class="headerlink" href="#id19" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>xp<span class="classifier">module</span></dt><dd><p>The backend module (NumPy or CuPy).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="model.rp_optimizer.CVAdam.update_parameters">
+<span class="sig-name descname"><span class="pre">update_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gradients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ut</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="modules/model/rp_optimizer.html#CVAdam.update_parameters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#model.rp_optimizer.CVAdam.update_parameters" title="Permalink to this definition"></a></dt>
+<dd><p>Updates the parameters using the complex-valued Adam optimizer.</p>
+<section id="id20">
+<h2>Parameters:<a class="headerlink" href="#id20" title="Permalink to this heading"></a></h2>
+<p>Same as the parent class.</p>
+</section>
+<section id="id21">
+<h2>Returns:<a class="headerlink" href="#id21" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>tuple</dt><dd><p>The updated parameters along with the updated moment estimates.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="model.rp_optimizer.CVAdamax">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">model.rp_optimizer.</span></span><span class="sig-name descname"><span class="pre">CVAdamax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.999</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-08</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="modules/model/rp_optimizer.html#CVAdamax"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#model.rp_optimizer.CVAdamax" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#model.rp_optimizer.Optimizer" title="model.rp_optimizer.Optimizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Optimizer</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="model.rp_optimizer.CVAdamax.set_module">
+<span class="sig-name descname"><span class="pre">set_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model.rp_optimizer.CVAdamax.set_module" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the backend module (NumPy or CuPy) for matrix operations.</p>
+<section id="id22">
+<h2>Parameters:<a class="headerlink" href="#id22" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>xp<span class="classifier">module</span></dt><dd><p>The backend module (NumPy or CuPy).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="model.rp_optimizer.CVAdamax.update_parameters">
+<span class="sig-name descname"><span class="pre">update_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gradients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ut</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="modules/model/rp_optimizer.html#CVAdamax.update_parameters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#model.rp_optimizer.CVAdamax.update_parameters" title="Permalink to this definition"></a></dt>
+<dd><p>Updates the parameters using the complex-valued Adamax optimizer.</p>
+<section id="id23">
+<h2>Parameters:<a class="headerlink" href="#id23" title="Permalink to this heading"></a></h2>
+<p>Same as the parent class.</p>
+</section>
+<section id="id24">
+<h2>Returns:<a class="headerlink" href="#id24" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>tuple</dt><dd><p>The updated parameters along with the updated moment estimates.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="model.rp_optimizer.CVNadam">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">model.rp_optimizer.</span></span><span class="sig-name descname"><span class="pre">CVNadam</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.999</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-08</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="modules/model/rp_optimizer.html#CVNadam"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#model.rp_optimizer.CVNadam" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#model.rp_optimizer.Nadam" title="model.rp_optimizer.Nadam"><code class="xref py py-class docutils literal notranslate"><span class="pre">Nadam</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="model.rp_optimizer.CVNadam.set_module">
+<span class="sig-name descname"><span class="pre">set_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model.rp_optimizer.CVNadam.set_module" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the backend module (NumPy or CuPy) for matrix operations.</p>
+<section id="id25">
+<h2>Parameters:<a class="headerlink" href="#id25" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>xp<span class="classifier">module</span></dt><dd><p>The backend module (NumPy or CuPy).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="model.rp_optimizer.CVNadam.update_parameters">
+<span class="sig-name descname"><span class="pre">update_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gradients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ut</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="modules/model/rp_optimizer.html#CVNadam.update_parameters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#model.rp_optimizer.CVNadam.update_parameters" title="Permalink to this definition"></a></dt>
+<dd><p>Updates the parameters using the complex-valued Nadam optimizer.</p>
+<section id="id26">
+<h2>Parameters:<a class="headerlink" href="#id26" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>parameters<span class="classifier">list of arrays</span></dt><dd><p>The parameters of the neural network.</p>
+</dd>
+<dt>gradients<span class="classifier">list of arrays</span></dt><dd><p>The gradients of the loss function with respect to the parameters.</p>
+</dd>
+<dt>learning_rate<span class="classifier">float</span></dt><dd><p>The learning rate for updating the parameters.</p>
+</dd>
+<dt>epoch<span class="classifier">int</span></dt><dd><p>The current epoch number.</p>
+</dd>
+<dt>mt<span class="classifier">list of arrays</span></dt><dd><p>The first moment estimates.</p>
+</dd>
+<dt>vt<span class="classifier">list of arrays</span></dt><dd><p>The second moment estimates.</p>
+</dd>
+<dt>ut<span class="classifier">list of arrays</span></dt><dd><p>The third moment estimates.</p>
+</dd>
+</dl>
+</section>
+<section id="id27">
+<h2>Returns:<a class="headerlink" href="#id27" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>tuple</dt><dd><p>The updated parameters along with the updated moment estimates.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="model.rp_optimizer.CVRMSprop">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">model.rp_optimizer.</span></span><span class="sig-name descname"><span class="pre">CVRMSprop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.999</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-08</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="modules/model/rp_optimizer.html#CVRMSprop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#model.rp_optimizer.CVRMSprop" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#model.rp_optimizer.Optimizer" title="model.rp_optimizer.Optimizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Optimizer</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="model.rp_optimizer.CVRMSprop.set_module">
+<span class="sig-name descname"><span class="pre">set_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model.rp_optimizer.CVRMSprop.set_module" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the backend module (NumPy or CuPy) for matrix operations.</p>
+<section id="id28">
+<h2>Parameters:<a class="headerlink" href="#id28" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>xp<span class="classifier">module</span></dt><dd><p>The backend module (NumPy or CuPy).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="model.rp_optimizer.CVRMSprop.update_parameters">
+<span class="sig-name descname"><span class="pre">update_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gradients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ut</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="modules/model/rp_optimizer.html#CVRMSprop.update_parameters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#model.rp_optimizer.CVRMSprop.update_parameters" title="Permalink to this definition"></a></dt>
+<dd><p>Updates the parameters using the complex-valued RMSprop optimizer.</p>
+<section id="id29">
+<h2>Parameters:<a class="headerlink" href="#id29" title="Permalink to this heading"></a></h2>
+<p>Same as the parent class.</p>
+</section>
+<section id="id30">
+<h2>Returns:<a class="headerlink" href="#id30" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>tuple</dt><dd><p>The updated parameters along with the updated moment estimates.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="model.rp_optimizer.GradientDescent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">model.rp_optimizer.</span></span><span class="sig-name descname"><span class="pre">GradientDescent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.999</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-08</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="modules/model/rp_optimizer.html#GradientDescent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#model.rp_optimizer.GradientDescent" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#model.rp_optimizer.Optimizer" title="model.rp_optimizer.Optimizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Optimizer</span></code></a></p>
+<p>Gradient Descent optimizer.</p>
+<p>This class implements the standard gradient descent optimization algorithm.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="model.rp_optimizer.GradientDescent.set_module">
+<span class="sig-name descname"><span class="pre">set_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model.rp_optimizer.GradientDescent.set_module" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the backend module (NumPy or CuPy) for matrix operations.</p>
+<section id="id31">
+<h2>Parameters:<a class="headerlink" href="#id31" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>xp<span class="classifier">module</span></dt><dd><p>The backend module (NumPy or CuPy).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="model.rp_optimizer.GradientDescent.update_parameters">
+<span class="sig-name descname"><span class="pre">update_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gradients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ut</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="modules/model/rp_optimizer.html#GradientDescent.update_parameters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#model.rp_optimizer.GradientDescent.update_parameters" title="Permalink to this definition"></a></dt>
+<dd><p>Updates the parameters using the gradient descent optimizer.</p>
+<section id="id32">
+<h2>Parameters:<a class="headerlink" href="#id32" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>parameters<span class="classifier">tuple</span></dt><dd><p>The parameters of the neural network.</p>
+</dd>
+<dt>gradients<span class="classifier">tuple</span></dt><dd><p>The gradients of the loss function with respect to the parameters.</p>
+</dd>
+<dt>learning_rate<span class="classifier">tuple</span></dt><dd><p>The learning rates for updating the parameters.</p>
+</dd>
+<dt>epoch<span class="classifier">int</span></dt><dd><p>The current epoch number.</p>
+</dd>
+<dt>mt<span class="classifier">tuple</span></dt><dd><p>The first moment estimates (not used in this optimizer).</p>
+</dd>
+<dt>vt<span class="classifier">tuple</span></dt><dd><p>The second moment estimates (not used in this optimizer).</p>
+</dd>
+<dt>ut<span class="classifier">tuple</span></dt><dd><p>The third moment estimates (not used in this optimizer).</p>
+</dd>
+</dl>
+</section>
+<section id="id33">
+<h2>Returns:<a class="headerlink" href="#id33" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>tuple</dt><dd><p>The updated parameters.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="model.rp_optimizer.Nadam">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">model.rp_optimizer.</span></span><span class="sig-name descname"><span class="pre">Nadam</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.999</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-08</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="modules/model/rp_optimizer.html#Nadam"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#model.rp_optimizer.Nadam" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#model.rp_optimizer.Optimizer" title="model.rp_optimizer.Optimizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Optimizer</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="model.rp_optimizer.Nadam.set_module">
+<span class="sig-name descname"><span class="pre">set_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model.rp_optimizer.Nadam.set_module" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the backend module (NumPy or CuPy) for matrix operations.</p>
+<section id="id34">
+<h2>Parameters:<a class="headerlink" href="#id34" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>xp<span class="classifier">module</span></dt><dd><p>The backend module (NumPy or CuPy).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="model.rp_optimizer.Nadam.update_parameters">
+<span class="sig-name descname"><span class="pre">update_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gradients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ut</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="modules/model/rp_optimizer.html#Nadam.update_parameters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#model.rp_optimizer.Nadam.update_parameters" title="Permalink to this definition"></a></dt>
+<dd><p>Updates the parameters using the Nadam optimizer.</p>
+<section id="id35">
+<h2>Parameters:<a class="headerlink" href="#id35" title="Permalink to this heading"></a></h2>
+<p>Same as the parent class.</p>
+</section>
+<section id="id36">
+<h2>Returns:<a class="headerlink" href="#id36" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>tuple</dt><dd><p>The updated parameters along with the updated moment estimates.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="model.rp_optimizer.Optimizer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">model.rp_optimizer.</span></span><span class="sig-name descname"><span class="pre">Optimizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.999</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-08</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="modules/model/rp_optimizer.html#Optimizer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#model.rp_optimizer.Optimizer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Base class for all optimizers used in the neural network.</p>
+<p>This class defines common parameters and methods that can be used
+by all derived optimizers.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="model.rp_optimizer.Optimizer.set_module">
+<span class="sig-name descname"><span class="pre">set_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xp</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="modules/model/rp_optimizer.html#Optimizer.set_module"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#model.rp_optimizer.Optimizer.set_module" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the backend module (NumPy or CuPy) for matrix operations.</p>
+<section id="id37">
+<h2>Parameters:<a class="headerlink" href="#id37" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>xp<span class="classifier">module</span></dt><dd><p>The backend module (NumPy or CuPy).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="model.rp_optimizer.Optimizer.update_parameters">
+<span class="sig-name descname"><span class="pre">update_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gradients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ut</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="modules/model/rp_optimizer.html#Optimizer.update_parameters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#model.rp_optimizer.Optimizer.update_parameters" title="Permalink to this definition"></a></dt>
+<dd><p>Updates the parameters of the neural network based on the gradients.</p>
+<p>This is a placeholder method that should be implemented by subclasses.</p>
+<section id="id38">
+<h2>Parameters:<a class="headerlink" href="#id38" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>parameters<span class="classifier">tuple</span></dt><dd><p>The parameters of the neural network.</p>
+</dd>
+<dt>gradients<span class="classifier">tuple</span></dt><dd><p>The gradients of the loss function with respect to the parameters.</p>
+</dd>
+<dt>learning_rate<span class="classifier">tuple</span></dt><dd><p>The learning rates for updating the parameters.</p>
+</dd>
+<dt>epoch<span class="classifier">int</span></dt><dd><p>The current epoch number.</p>
+</dd>
+<dt>mt<span class="classifier">tuple</span></dt><dd><p>The first moment estimates.</p>
+</dd>
+<dt>vt<span class="classifier">tuple</span></dt><dd><p>The second moment estimates.</p>
+</dd>
+<dt>ut<span class="classifier">tuple</span></dt><dd><p>The third moment estimates.</p>
+</dd>
+</dl>
+</section>
+<section id="id39">
+<h2>Returns:<a class="headerlink" href="#id39" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>tuple</dt><dd><p>The updated parameters along with the updated moment estimates.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="model.rp_optimizer.RMSprop">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">model.rp_optimizer.</span></span><span class="sig-name descname"><span class="pre">RMSprop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.999</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-08</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="modules/model/rp_optimizer.html#RMSprop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#model.rp_optimizer.RMSprop" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#model.rp_optimizer.Optimizer" title="model.rp_optimizer.Optimizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Optimizer</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="model.rp_optimizer.RMSprop.set_module">
+<span class="sig-name descname"><span class="pre">set_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model.rp_optimizer.RMSprop.set_module" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the backend module (NumPy or CuPy) for matrix operations.</p>
+<section id="id40">
+<h2>Parameters:<a class="headerlink" href="#id40" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>xp<span class="classifier">module</span></dt><dd><p>The backend module (NumPy or CuPy).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="model.rp_optimizer.RMSprop.update_parameters">
+<span class="sig-name descname"><span class="pre">update_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gradients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ut</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="modules/model/rp_optimizer.html#RMSprop.update_parameters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#model.rp_optimizer.RMSprop.update_parameters" title="Permalink to this definition"></a></dt>
+<dd><p>Updates the parameters using the RMSprop optimizer.</p>
+<section id="id41">
+<h2>Parameters:<a class="headerlink" href="#id41" title="Permalink to this heading"></a></h2>
+<p>Same as the parent class.</p>
+</section>
+<section id="id42">
+<h2>Returns:<a class="headerlink" href="#id42" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>tuple</dt><dd><p>The updated parameters along with the updated moment estimates.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="model.rp_optimizer.SAMSGrad">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">model.rp_optimizer.</span></span><span class="sig-name descname"><span class="pre">SAMSGrad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.999</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-08</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="modules/model/rp_optimizer.html#SAMSGrad"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#model.rp_optimizer.SAMSGrad" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#model.rp_optimizer.Optimizer" title="model.rp_optimizer.Optimizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Optimizer</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="model.rp_optimizer.SAMSGrad.set_module">
+<span class="sig-name descname"><span class="pre">set_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model.rp_optimizer.SAMSGrad.set_module" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the backend module (NumPy or CuPy) for matrix operations.</p>
+<section id="id43">
+<h2>Parameters:<a class="headerlink" href="#id43" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>xp<span class="classifier">module</span></dt><dd><p>The backend module (NumPy or CuPy).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="model.rp_optimizer.SAMSGrad.update_parameters">
+<span class="sig-name descname"><span class="pre">update_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gradients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ut</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="modules/model/rp_optimizer.html#SAMSGrad.update_parameters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#model.rp_optimizer.SAMSGrad.update_parameters" title="Permalink to this definition"></a></dt>
+<dd><p>Updates the parameters using the SAMSGrad optimizer.</p>
+<section id="id44">
+<h2>Parameters:<a class="headerlink" href="#id44" title="Permalink to this heading"></a></h2>
+<p>Same as the parent class.</p>
+</section>
+<section id="id45">
+<h2>Returns:<a class="headerlink" href="#id45" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>tuple</dt><dd><p>The updated parameters along with the updated moment estimates.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Ariadne A. Cruz, Kayol S. Mayer, Dalton S. Arantes.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
