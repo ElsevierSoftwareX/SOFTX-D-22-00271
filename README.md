@@ -6,7 +6,7 @@
 - A complex-valued neural network library, written in Python;
 - Incorporates CVNNs such as CV-FFNN (complex-valued feedforward neural network), SC-FFNN (split-complex feedforward neural network), CV-RBFNN (complex-valued radial basis function neural network), FC-RBFNN (fully-complex radial basis function neural network), and PT-RBFNN (phase transmittance radial basis function neural network);
 - It enables the incorporation of properties intrinsic to neural networks, such as L2 regularization, optmization, early stopping, mini-batch, and learning rate decay.
-
+- For more information about the documentation, visit: https://ariadneac.github.io/rosenpy-v2.1/
 ### Dependencies
 - Python3.6+, Numpy, Cupy
 
