@@ -1,0 +1,7 @@
+utils.decay\_func module
+========================
+
+.. automodule:: utils.decay_func
+   :members:
+   :undoc-members:
+   :show-inheritance:

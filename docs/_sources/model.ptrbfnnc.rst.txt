@@ -1,0 +1,7 @@
+model.ptrbfnnc module
+=====================
+
+.. automodule:: model.ptrbfnnc
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,7 @@
+model.cvrbfnn module
+====================
+
+.. automodule:: model.cvrbfnn
+   :members:
+   :undoc-members:
+   :show-inheritance:

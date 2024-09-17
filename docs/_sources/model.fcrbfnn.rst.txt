@@ -1,0 +1,7 @@
+model.fcrbfnn module
+====================
+
+.. automodule:: model.fcrbfnn
+   :members:
+   :undoc-members:
+   :show-inheritance:
