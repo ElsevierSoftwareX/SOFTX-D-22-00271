@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>model.rp_layer module &mdash; RosenPy 2.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/ico_rosenpy.ico"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/logo_rosenpy.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome to RosenPy’s documentation!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rosenpy.html">rosenpy package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RosenPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">model.rp_layer module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/model.rp_layer.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-model.rp_layer">
+<span id="model-rp-layer-module"></span><h1>model.rp_layer module<a class="headerlink" href="#module-model.rp_layer" title="Permalink to this heading"></a></h1>
+<p><strong>RosenPy: An Open Source Python Framework for Complex-Valued Neural Networks</strong>.
+<em>Copyright © A. A. Cruz, K. S. Mayer, D. S. Arantes</em>.</p>
+<p><em>License</em></p>
+<p>This file is part of RosenPy.
+RosenPy is an open source framework distributed under the terms of the GNU General
+Public License, as published by the Free Software Foundation, either version 3 of
+the License, or (at your option) any later version. For additional information on
+license terms, please open the Readme.md file.</p>
+<p>RosenPy is distributed in the hope that it will be useful to every user, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+See the GNU General Public License for more details.</p>
+<p>You should have received a copy of the GNU General Public License
+along with RosenPy.  If not, see &lt;<a class="reference external" href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>&gt;.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="model.rp_layer.Layer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">model.rp_layer.</span></span><span class="sig-name descname"><span class="pre">Layer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ishape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">neurons</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">oshape=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights_initializer=&lt;function</span> <span class="pre">random_normal&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bias_initializer=&lt;function</span> <span class="pre">random_normal&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma_initializer=&lt;function</span> <span class="pre">rbf_default&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma_initializer=&lt;function</span> <span class="pre">ones&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation=&lt;function</span> <span class="pre">tanh&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reg_strength=0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda_init=0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights_rate=0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">biases_rate=0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma_rate=0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma_rate=0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cvnn=1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lr_decay_method=&lt;function</span> <span class="pre">none_decay&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lr_decay_rate=0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lr_decay_steps=1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_initializer=&lt;function</span> <span class="pre">opt_ptrbf_weights&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_size=3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">category=1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layer_type='Fully'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/model/rp_layer.html#Layer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#model.rp_layer.Layer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Specification for a layer to be passed to the Neural Network during construction.
+This includes a variety of parameters to configure each layer based on its activation type.</p>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Ariadne A. Cruz, Kayol S. Mayer, Dalton S. Arantes.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
