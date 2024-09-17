@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>model.cvffnn &mdash; RosenPy 2.1 documentation</title>
+      <link rel="stylesheet" href="../../static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="../../static/ico_rosenpy.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../static/jquery.js"></script>
+        <script src="../../static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../static/documentation_options.js"></script>
+        <script src="../../static/doctools.js"></script>
+        <script src="../../static/sphinx_highlight.js"></script>
+    <script src="../../static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../static/logo_rosenpy.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../welcome.html">Welcome to RosenPy’s documentation!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rosenpy.html">rosenpy package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples.html">Examples</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">RosenPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">model.cvffnn</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for model.cvffnn</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;**RosenPy: An Open Source Python Framework for Complex-Valued Neural Networks**.</span>
+<span class="sd">*Copyright © A. A. Cruz, K. S. Mayer, D. S. Arantes*.</span>
+
+<span class="sd">*License*</span>
+
+<span class="sd">This file is part of RosenPy.</span>
+<span class="sd">RosenPy is an open source framework distributed under the terms of the GNU General </span>
+<span class="sd">Public License, as published by the Free Software Foundation, either version 3 of </span>
+<span class="sd">the License, or (at your option) any later version. For additional information on </span>
+<span class="sd">license terms, please open the Readme.md file.</span>
+
+<span class="sd">RosenPy is distributed in the hope that it will be useful to every user, but</span>
+<span class="sd">WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="sd">MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. </span>
+<span class="sd">See the GNU General Public License for more details. </span>
+
+<span class="sd">You should have received a copy of the GNU General Public License</span>
+<span class="sd">along with RosenPy. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">rosenpy.utils</span> <span class="kn">import</span> <span class="n">reg_func</span><span class="p">,</span> <span class="n">init_func</span><span class="p">,</span> <span class="n">act_func</span><span class="p">,</span> <span class="n">decay_func</span>
+<span class="kn">from</span> <span class="nn">.rp_layer</span> <span class="kn">import</span> <span class="n">Layer</span>
+<span class="kn">from</span> <span class="nn">.rp_nn</span> <span class="kn">import</span> <span class="n">NeuralNetwork</span>
+
+<div class="viewcode-block" id="CVFFNN"><a class="viewcode-back" href="../../model.cvffnn.html#model.cvffnn.CVFFNN">[docs]</a><span class="k">class</span> <span class="nc">CVFFNN</span><span class="p">(</span><span class="n">NeuralNetwork</span><span class="p">):</span> 
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Complex Valued FeedForward Neural Network (CVFFNN) class.</span>
+<span class="sd">    </span>
+<span class="sd">    This class handles feedforward, backpropagation, and layer addition operations </span>
+<span class="sd">    for a complex-valued neural network.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="CVFFNN.feedforward"><a class="viewcode-back" href="../../model.cvffnn.html#model.cvffnn.CVFFNN.feedforward">[docs]</a>    <span class="k">def</span> <span class="nf">feedforward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Perform the feedforward operation on the neural network.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        input_data : numpy.array or cupy.array</span>
+<span class="sd">            The input data to feed into the network.</span>
+<span class="sd">        </span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        numpy.array or cupy.array</span>
+<span class="sd">            The output of the final layer after feedforward.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gpu_enable</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_feedforward_gpu</span><span class="p">(</span><span class="n">input_data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_feedforward_cpu</span><span class="p">(</span><span class="n">input_data</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_feedforward_gpu</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Perform feedforward using GPU acceleration.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        x : cupy.array</span>
+<span class="sd">            The input data for the feedforward operation.</span>
+<span class="sd">        </span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        cupy.array</span>
+<span class="sd">            The output of the final layer after feedforward.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">layers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span>
+        <span class="n">layers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">input</span> <span class="o">=</span> <span class="n">x</span>
+        
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">layer</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">layers</span><span class="p">):</span>
+            <span class="n">layer</span><span class="o">.</span><span class="n">_activ_in</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">xp</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">layer</span><span class="o">.</span><span class="n">input</span><span class="p">,</span> <span class="n">layer</span><span class="o">.</span><span class="n">weights</span><span class="p">)</span> <span class="o">+</span> <span class="n">layer</span><span class="o">.</span><span class="n">biases</span>
+            <span class="n">layer</span><span class="o">.</span><span class="n">_activ_out</span> <span class="o">=</span> <span class="n">layer</span><span class="o">.</span><span class="n">activation</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xp</span><span class="p">,</span> <span class="n">layer</span><span class="o">.</span><span class="n">_activ_in</span><span class="p">,</span> <span class="n">derivative</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">layers</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">layers</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">input</span> <span class="o">=</span> <span class="n">layer</span><span class="o">.</span><span class="n">_activ_out</span>
+        
+        <span class="k">return</span> <span class="n">layers</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">_activ_out</span>
+
+    <span class="k">def</span> <span class="nf">_feedforward_cpu</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Perform feedforward using CPU.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        x : numpy.array</span>
+<span class="sd">            The input data for the feedforward operation.</span>
+<span class="sd">        </span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        numpy.array</span>
+<span class="sd">            The output of the final layer after feedforward.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">input</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">_activ_in</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">xp</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">input</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">weights</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">biases</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">_activ_out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">activation</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xp</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">_activ_in</span><span class="p">,</span> <span class="n">derivative</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">)):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">input</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">_activ_out</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">_activ_in</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">xp</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">input</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">weights</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">biases</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">_activ_out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">activation</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xp</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">_activ_in</span><span class="p">,</span> <span class="n">derivative</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">_activ_out</span>
+
+<div class="viewcode-block" id="CVFFNN.backprop"><a class="viewcode-back" href="../../model.cvffnn.html#model.cvffnn.CVFFNN.backprop">[docs]</a>    <span class="k">def</span> <span class="nf">backprop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">epoch</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Perform the backpropagation operation on the neural network.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        y : numpy.array or cupy.array</span>
+<span class="sd">            The true target values.</span>
+<span class="sd">        y_pred : numpy.array or cupy.array</span>
+<span class="sd">            The predicted values from the network.</span>
+<span class="sd">        epoch : int</span>
+<span class="sd">            The current training epoch.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gpu_enable</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backprop_gpu</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">epoch</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backprop_cpu</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">epoch</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_backprop_gpu</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">epoch</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Perform backpropagation using GPU acceleration.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        y : cupy.array</span>
+<span class="sd">            The true target values.</span>
+<span class="sd">        y_pred : cupy.array</span>
+<span class="sd">            The predicted values from the network.</span>
+<span class="sd">        epoch : int</span>
+<span class="sd">            The current training epoch.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">e</span> <span class="o">=</span> <span class="n">y</span> <span class="o">-</span> <span class="n">y_pred</span>
+        <span class="n">delta_dir</span><span class="p">,</span> <span class="n">aux_w</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">0</span>
+        
+        <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">):</span>
+            <span class="n">deriv</span> <span class="o">=</span> <span class="n">layer</span><span class="o">.</span><span class="n">activation</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xp</span><span class="p">,</span> <span class="n">layer</span><span class="o">.</span><span class="n">_activ_in</span><span class="p">,</span> <span class="n">derivative</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">delta_dir</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">delta_dir</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">xp</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xp</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">delta_dir</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">xp</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">aux_w</span><span class="o">.</span><span class="n">T</span><span class="p">)),</span> <span class="bp">self</span><span class="o">.</span><span class="n">xp</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">deriv</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">delta_dir</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">xp</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xp</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">deriv</span><span class="p">),</span> <span class="n">e</span><span class="p">)</span>
+            
+            <span class="n">aux_w</span> <span class="o">=</span> <span class="n">layer</span><span class="o">.</span><span class="n">weights</span>
+            <span class="n">reg_l2</span> <span class="o">=</span> <span class="n">reg_func</span><span class="o">.</span><span class="n">l2_regularization</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xp</span><span class="p">,</span> <span class="n">layer</span><span class="o">.</span><span class="n">lambda_init</span><span class="p">,</span> <span class="n">layer</span><span class="o">.</span><span class="n">reg_strength</span><span class="p">,</span> <span class="n">epoch</span><span class="p">)</span>
+            
+            <span class="n">grad_w</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">xp</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xp</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">layer</span><span class="o">.</span><span class="n">input</span><span class="o">.</span><span class="n">T</span><span class="p">),</span> <span class="n">delta_dir</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">reg_l2</span> <span class="k">if</span> <span class="n">layer</span><span class="o">.</span><span class="n">reg_strength</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span> <span class="o">*</span> <span class="n">layer</span><span class="o">.</span><span class="n">weights</span>
+            <span class="n">grad_b</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">xp</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">delta_dir</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">reg_l2</span> <span class="k">if</span> <span class="n">layer</span><span class="o">.</span><span class="n">reg_strength</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span> <span class="o">*</span> <span class="n">layer</span><span class="o">.</span><span class="n">biases</span>
+            
+            <span class="n">layer</span><span class="o">.</span><span class="n">weights</span><span class="p">,</span> <span class="n">layer</span><span class="o">.</span><span class="n">biases</span><span class="p">,</span> <span class="n">layer</span><span class="o">.</span><span class="n">mt</span><span class="p">,</span> <span class="n">layer</span><span class="o">.</span><span class="n">vt</span><span class="p">,</span> <span class="n">layer</span><span class="o">.</span><span class="n">ut</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">optimizer</span><span class="o">.</span><span class="n">update_parameters</span><span class="p">(</span>
+                <span class="p">[</span><span class="n">layer</span><span class="o">.</span><span class="n">weights</span><span class="p">,</span> <span class="n">layer</span><span class="o">.</span><span class="n">biases</span><span class="p">],</span> 
+                <span class="p">[</span><span class="n">grad_w</span><span class="p">,</span> <span class="n">grad_b</span><span class="p">],</span> 
+                <span class="n">layer</span><span class="o">.</span><span class="n">learning_rates</span><span class="p">,</span> 
+                <span class="n">epoch</span><span class="p">,</span> <span class="n">layer</span><span class="o">.</span><span class="n">mt</span><span class="p">,</span> <span class="n">layer</span><span class="o">.</span><span class="n">vt</span><span class="p">,</span> <span class="n">layer</span><span class="o">.</span><span class="n">ut</span>
+            <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_backprop_cpu</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">epoch</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Perform backpropagation using CPU.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        y : numpy.array</span>
+<span class="sd">            The true target values.</span>
+<span class="sd">        y_pred : numpy.array</span>
+<span class="sd">            The predicted values from the network.</span>
+<span class="sd">        epoch : int</span>
+<span class="sd">            The current training epoch.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">e</span> <span class="o">=</span> <span class="n">y</span> <span class="o">-</span> <span class="n">y_pred</span>
+        <span class="n">delta_dir</span><span class="p">,</span> <span class="n">aux_w</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">0</span>
+        
+        <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">):</span>
+            <span class="n">deriv</span> <span class="o">=</span> <span class="n">layer</span><span class="o">.</span><span class="n">activation</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xp</span><span class="p">,</span> <span class="n">layer</span><span class="o">.</span><span class="n">_activ_in</span><span class="p">,</span> <span class="n">derivative</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">delta_dir</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">delta_dir</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">xp</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xp</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">deriv</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">xp</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">delta_dir</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">xp</span><span class="o">.</span><span class="n">conjugate</span><span class="p">(</span><span class="n">aux_w</span><span class="o">.</span><span class="n">T</span><span class="p">)))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">delta_dir</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">xp</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xp</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">deriv</span><span class="p">),</span> <span class="n">e</span><span class="p">)</span>
+            
+            <span class="n">aux_w</span> <span class="o">=</span> <span class="n">layer</span><span class="o">.</span><span class="n">weights</span>
+            <span class="n">reg_l2</span> <span class="o">=</span> <span class="n">reg_func</span><span class="o">.</span><span class="n">l2_regularization</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xp</span><span class="p">,</span> <span class="n">layer</span><span class="o">.</span><span class="n">lambda_init</span><span class="p">,</span> <span class="n">layer</span><span class="o">.</span><span class="n">reg_strength</span><span class="p">,</span> <span class="n">epoch</span><span class="p">)</span>
+            
+            <span class="n">grad_w</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">xp</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xp</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">layer</span><span class="o">.</span><span class="n">input</span><span class="o">.</span><span class="n">T</span><span class="p">),</span> <span class="n">delta_dir</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">reg_l2</span> <span class="k">if</span> <span class="n">layer</span><span class="o">.</span><span class="n">reg_strength</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span> <span class="o">*</span> <span class="n">layer</span><span class="o">.</span><span class="n">weights</span>
+            <span class="n">grad_b</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">xp</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">delta_dir</span><span class="p">),</span> <span class="n">delta_dir</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">-</span> <span class="p">(</span><span class="n">reg_l2</span> <span class="k">if</span> <span class="n">layer</span><span class="o">.</span><span class="n">reg_strength</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span> <span class="o">*</span> <span class="n">layer</span><span class="o">.</span><span class="n">biases</span>
+            
+            <span class="n">layer</span><span class="o">.</span><span class="n">weights</span><span class="p">,</span> <span class="n">layer</span><span class="o">.</span><span class="n">biases</span><span class="p">,</span> <span class="n">layer</span><span class="o">.</span><span class="n">mt</span><span class="p">,</span> <span class="n">layer</span><span class="o">.</span><span class="n">vt</span><span class="p">,</span> <span class="n">layer</span><span class="o">.</span><span class="n">ut</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">optimizer</span><span class="o">.</span><span class="n">update_parameters</span><span class="p">(</span>
+                <span class="p">[</span><span class="n">layer</span><span class="o">.</span><span class="n">weights</span><span class="p">,</span> <span class="n">layer</span><span class="o">.</span><span class="n">biases</span><span class="p">],</span> 
+                <span class="p">[</span><span class="n">grad_w</span><span class="p">,</span> <span class="n">grad_b</span><span class="p">],</span> 
+                <span class="n">layer</span><span class="o">.</span><span class="n">learning_rates</span><span class="p">,</span> 
+                <span class="n">epoch</span><span class="p">,</span> <span class="n">layer</span><span class="o">.</span><span class="n">mt</span><span class="p">,</span> <span class="n">layer</span><span class="o">.</span><span class="n">vt</span><span class="p">,</span> <span class="n">layer</span><span class="o">.</span><span class="n">ut</span>
+            <span class="p">)</span>
+
+<div class="viewcode-block" id="CVFFNN.add_layer"><a class="viewcode-back" href="../../model.cvffnn.html#model.cvffnn.CVFFNN.add_layer">[docs]</a>    <span class="k">def</span> <span class="nf">add_layer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">neurons</span><span class="p">,</span> <span class="n">ishape</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">weights_initializer</span><span class="o">=</span><span class="n">init_func</span><span class="o">.</span><span class="n">random_normal</span><span class="p">,</span> 
+                  <span class="n">bias_initializer</span><span class="o">=</span><span class="n">init_func</span><span class="o">.</span><span class="n">random_normal</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="n">act_func</span><span class="o">.</span><span class="n">tanh</span><span class="p">,</span>
+                  <span class="n">weights_rate</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">biases_rate</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> 
+                  <span class="n">reg_strength</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">lambda_init</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">lr_decay_method</span><span class="o">=</span><span class="n">decay_func</span><span class="o">.</span><span class="n">none_decay</span><span class="p">,</span>  
+                  <span class="n">lr_decay_rate</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">lr_decay_steps</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">module</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add a layer to the neural network.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        neurons : int</span>
+<span class="sd">            The number of neurons in the layer.</span>
+<span class="sd">        ishape : int, optional</span>
+<span class="sd">            The input shape for the layer. Defaults to 0.</span>
+<span class="sd">        weights_initializer : function, optional</span>
+<span class="sd">            Function to initialize the weights. Defaults to random_normal.</span>
+<span class="sd">        bias_initializer : function, optional</span>
+<span class="sd">            Function to initialize the biases. Defaults to random_normal.</span>
+<span class="sd">        activation : function, optional</span>
+<span class="sd">            Activation function to use. Defaults to tanh.</span>
+<span class="sd">        weights_rate : float, optional</span>
+<span class="sd">            The learning rate for the weights. Defaults to 0.001.</span>
+<span class="sd">        biases_rate : float, optional</span>
+<span class="sd">            The learning rate for the biases. Defaults to 0.001.</span>
+<span class="sd">        reg_strength : float, optional</span>
+<span class="sd">            The regularization strength. Defaults to 0.0.</span>
+<span class="sd">        lambda_init : float, optional</span>
+<span class="sd">            The initial lambda for regularization. Defaults to 0.1.</span>
+<span class="sd">        lr_decay_method : function, optional</span>
+<span class="sd">            Method for decaying the learning rate. Defaults to none_decay.</span>
+<span class="sd">        lr_decay_rate : float, optional</span>
+<span class="sd">            The rate at which the learning rate decays. Defaults to 0.0.</span>
+<span class="sd">        lr_decay_steps : int, optional</span>
+<span class="sd">            The number of steps after which the learning rate decays. Defaults to 1.</span>
+<span class="sd">        module : object, optional</span>
+<span class="sd">            The module (e.g., NumPy or CuPy) to be used for computation. Defaults to None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Layer</span><span class="p">(</span>
+            <span class="n">ishape</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">neurons</span><span class="p">,</span> <span class="n">neurons</span><span class="p">,</span>
+            <span class="n">weights_initializer</span><span class="o">=</span><span class="n">weights_initializer</span><span class="p">,</span> 
+            <span class="n">bias_initializer</span><span class="o">=</span><span class="n">bias_initializer</span><span class="p">,</span> 
+            <span class="n">activation</span><span class="o">=</span><span class="n">activation</span><span class="p">,</span> 
+            <span class="n">weights_rate</span><span class="o">=</span><span class="n">weights_rate</span><span class="p">,</span> 
+            <span class="n">biases_rate</span><span class="o">=</span><span class="n">biases_rate</span><span class="p">,</span> 
+            <span class="n">reg_strength</span><span class="o">=</span><span class="n">reg_strength</span><span class="p">,</span> 
+            <span class="n">lambda_init</span><span class="o">=</span><span class="n">lambda_init</span><span class="p">,</span> 
+            <span class="n">cvnn</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="n">lr_decay_method</span><span class="o">=</span><span class="n">lr_decay_method</span><span class="p">,</span>  
+            <span class="n">lr_decay_rate</span><span class="o">=</span><span class="n">lr_decay_rate</span><span class="p">,</span> 
+            <span class="n">lr_decay_steps</span><span class="o">=</span><span class="n">lr_decay_steps</span><span class="p">,</span>
+            <span class="n">module</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">xp</span>
+        <span class="p">))</span></div></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Ariadne A. Cruz, Kayol S. Mayer, Dalton S. Arantes.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

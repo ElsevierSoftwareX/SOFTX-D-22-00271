@@ -1,0 +1,15 @@
+rosenpy.utils package
+=====================
+
+.. toctree::
+   :maxdepth: 4
+
+   utils.act_func
+   utils.batch_gen_func 
+   utils.cost_func 
+   utils.decay_func 
+   utils.init_func 
+   utils.plot 
+   utils.reg_func 
+   utils.select_module 
+   utils.utils 

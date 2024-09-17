@@ -1,0 +1,7 @@
+model.rp\_layer module
+======================
+
+.. automodule:: model.rp_layer
+   :members:
+   :undoc-members:
+   :show-inheritance:

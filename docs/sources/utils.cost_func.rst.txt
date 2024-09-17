@@ -1,0 +1,7 @@
+utils.cost\_func module
+=======================
+
+.. automodule:: utils.cost_func
+   :members:
+   :undoc-members:
+   :show-inheritance:

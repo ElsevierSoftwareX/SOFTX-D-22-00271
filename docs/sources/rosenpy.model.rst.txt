@@ -1,0 +1,15 @@
+rosenpy.model package
+=====================
+
+.. toctree::
+   :maxdepth: 4
+
+   model.cvffnn
+   model.scffnn
+   model.cvrbfnn
+   model.fcrbfnn
+   model.ptrbfnnc
+   model.rp_layer
+   model.rp_nn
+   model.rp_optimizer
+   

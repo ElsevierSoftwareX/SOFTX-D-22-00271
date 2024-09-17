@@ -1,0 +1,12 @@
+rosenpy package
+===============
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   rosenpy.model
+   rosenpy.utils
+

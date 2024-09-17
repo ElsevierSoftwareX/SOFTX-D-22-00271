@@ -1,0 +1,7 @@
+model.rp\_nn module
+===================
+
+.. automodule:: model.rp_nn
+   :members:
+   :undoc-members:
+   :show-inheritance:
