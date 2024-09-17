@@ -1,7 +1,0 @@
-model.scffnn module
-===================
-
-.. automodule:: model.scffnn
-   :members:
-   :undoc-members:
-   :show-inheritance:

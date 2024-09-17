@@ -1,7 +1,0 @@
-utils.reg\_func module
-======================
-
-.. automodule:: utils.reg_func
-   :members:
-   :undoc-members:
-   :show-inheritance:

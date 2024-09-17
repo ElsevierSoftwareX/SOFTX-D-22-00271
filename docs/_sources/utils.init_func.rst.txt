@@ -1,7 +1,0 @@
-utils.init\_func module
-=======================
-
-.. automodule:: utils.init_func
-   :members:
-   :undoc-members:
-   :show-inheritance:

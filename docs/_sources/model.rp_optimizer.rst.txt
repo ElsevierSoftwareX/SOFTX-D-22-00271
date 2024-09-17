@@ -1,7 +1,0 @@
-model.rp\_optimizer module
-==========================
-
-.. automodule:: model.rp_optimizer
-   :members:
-   :undoc-members:
-   :show-inheritance:

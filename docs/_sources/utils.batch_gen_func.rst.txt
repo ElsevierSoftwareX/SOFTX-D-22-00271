@@ -1,7 +1,0 @@
-utils.batch\_gen\_func module
-=============================
-
-.. automodule:: utils.batch_gen_func
-   :members:
-   :undoc-members:
-   :show-inheritance:

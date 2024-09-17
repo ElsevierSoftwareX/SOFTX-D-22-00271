@@ -1,7 +1,0 @@
-model.cvffnn module
-===================
-
-.. automodule:: model.cvffnn
-   :members:
-   :undoc-members:
-   :show-inheritance:

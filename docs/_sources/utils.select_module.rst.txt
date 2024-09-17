@@ -1,7 +1,0 @@
-utils.select\_module module
-===========================
-
-.. automodule:: utils.select_module
-   :members:
-   :undoc-members:
-   :show-inheritance:
